@@ -10,7 +10,6 @@
 /public/images/starting_city
 /storage/db-backups/*.sql
 /storage/*.key
-/vendor
 /.idea
 /.vscode
 /nbproject
