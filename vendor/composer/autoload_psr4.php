@@ -60,7 +60,6 @@ return array(
     'Omnipay\\Stripe\\' => array($vendorDir . '/omnipay/stripe/src'),
     'Omnipay\\PayPal\\' => array($vendorDir . '/omnipay/paypal/src'),
     'Omnipay\\Common\\' => array($vendorDir . '/omnipay/common/src/Common'),
-    'Nwidart\\Modules\\' => array($vendorDir . '/nwidart/laravel-modules/src'),
     'NunoMaduro\\Collision\\' => array($vendorDir . '/nunomaduro/collision/src'),
     'MyCLabs\\Enum\\' => array($vendorDir . '/myclabs/php-enum/src'),
     'Mpdf\\' => array($vendorDir . '/mpdf/mpdf/src'),

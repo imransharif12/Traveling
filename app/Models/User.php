@@ -96,9 +96,9 @@ class User extends Authenticatable
     public function getProfileSrcAttribute()
     {
         if ($this->attributes['profile_image'] == '') {
-            $src = url('public/images/default-profile.png');
+            $src = url('images/default-profile.png');
         } else {
-            $src = url('public/images/profile/'.$this->attributes['id'].'/'.$this->attributes['profile_image']);
+            $src = url('images/profile/'.$this->attributes['id'].'/'.$this->attributes['profile_image']);
         }
 
         return $src;

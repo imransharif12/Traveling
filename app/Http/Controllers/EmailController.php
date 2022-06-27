@@ -826,7 +826,7 @@ class EmailController extends Controller
 
     public function sendPhpEmail($data, $configEmail)
     {
-        require_once "vendor/autoload.php";
+        require '../vendor/autoload.php';
 
         $mail = new PHPMailer();
 
