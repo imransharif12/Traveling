@@ -1,6 +1,6 @@
 <footer class="main-footer">
 	<div class="pull-right hidden-xs">
-		<b>Version</b> 3.1
+		<b>Version</b> 3.2
 	</div>
 	@if (!empty($site_name))
 	{{ trans('messages.home.all_rights_reserved') }} <a target="_blank" style="color: #1dbf73 !important;" href="https://trendgotviral.com"> {{ trans('messages.home.trendgotviral') }}</a>  </p>
