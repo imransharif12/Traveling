@@ -98,7 +98,7 @@ class SettingsController extends Controller
                         $name = time().'_'.$key.'.'.$ext;
 
                         if ($ext == 'png' || $ext == 'jpg' || $ext == 'jpeg' || $ext == 'gif' || $ext == 'ico') {
-                            if (move_uploaded_file($tmp_name, "public/front/images/logos/".$name)) {
+                            if (move_uploaded_file($tmp_name, "front/images/logos/".$name)) {
                                 Settings::where(['name' => $key])->update(['value' => $name]);
                             }
                         }

@@ -3,7 +3,7 @@
 		<b>Version</b> 3.1
 	</div>
 	@if (!empty($site_name))
-		<strong>Copyright &copy; 2016-{{date('Y')}} <a href="#">{{ $site_name}}</a>.</strong> All rights reserved.
+	{{ trans('messages.home.all_rights_reserved') }} <a target="_blank" style="color: #1dbf73 !important;" href="https://trendgotviral.com"> {{ trans('messages.home.trendgotviral') }}</a>  </p>
 	@endif
 </footer>
 

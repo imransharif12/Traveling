@@ -90,7 +90,7 @@
 	<div class="border-top p-0 mt-4">
 		<div class="row  justify-content-between p-2">
 			<p class="col-lg-12 col-sm-12 mb-0 mt-4 text-14 text-center">
-			© 2017-{{ date('Y') }} {{$site_name ?? ''}}. {{ trans('messages.home.all_rights_reserved') }}</p>
+			{{ trans('messages.home.all_rights_reserved') }} <a target="_blank" style="color: #1dbf73 !important;" href="https://trendgotviral.com"> {{ trans('messages.home.trendgotviral') }}</a>  </p>
 		</div>
 	</div>
 </footer>
