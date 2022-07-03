@@ -36,8 +36,8 @@
                                                         <span
                                                             class="text-center text-success">{{ session('success') }}</span>
                                                     @endif
-                                                    <input class="form-control text-16" name="file" id="photo_file"
-                                                           type="file" value="">
+                                                    <input class="form-control text-16" name="file[]" id="photo_file"
+                                                           type="file" value="" multiple="">
                                                     <input type="hidden" id="photo" type="text" name="photos">
                                                     <input type="hidden" name="img_name" id="img_name">
                                                     <input type="hidden" name="crop" id="type" value="crop">
@@ -81,8 +81,7 @@
                                         ?>
 
                                         <div class="col-md-4 margin-top10" id="photo-div-{{$photo->id}}">
-                                            <div class="room-image-container200"
-                                                 style="background-image:url({{url('public/images/property/'.$photo->property_id.'/'.$photo->photo)}});">
+                                            <div class="room-image-container200" style="background-image:url({{url('images/property/'.$photo->property_id.'/'.$photo->photo)}})">
                                                 @if($photo->cover_photo == 0)
                                                     <a class="photo-delete" href="javascript:void(0)"
                                                        data-rel="{{$photo->id}}"><p class="photo-delete-icon"><i
@@ -180,7 +179,7 @@
     </div>
 
     @push('css')
-        <link rel="stylesheet" href="{{ url('public/css/cropper.css') }}"/>
+        <link rel="stylesheet" href="{{ url('css/cropper.css') }}"/>
         <style>
             .modal-content {
                 border-radius: 0 !important;
@@ -217,7 +216,7 @@
         </style>
     @endpush
     @push('scripts')
-        <script src="{{ url('public/js/cropper.min.js') }}"></script>
+        <script src="{{ url('js/cropper.min.js') }}"></script>
         <script type="text/javascript">
             var gl_photo_id = 0;
             $(document).on('submit', '#photo-form', function (e) {
@@ -358,8 +357,10 @@
         </script>
         <script>
             $('#photo_file').on('change', function () {
-                $("#crop-modal").modal();
-                var canvas = $("#canvas"),
+                //for crop remove below line
+                $('#type').val('simple_file');
+                // $("#crop-modal").modal();
+                    var canvas = $("#canvas"),
                     context = canvas.get(0).getContext("2d"),
                     result = $('#result img');
                 let name = this.files[0].name;
@@ -410,7 +411,7 @@
 @stop
 
 @section('validate_script')
-    <script src="{{ asset('public/backend/js/additional-method.min.js') }}"></script>
+    <script src="{{ asset('backend/js/additional-method.min.js') }}"></script>
     <script type="text/javascript">
         $(document).ready(function () {
 

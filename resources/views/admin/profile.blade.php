@@ -17,7 +17,7 @@ $form_data = [
 @endphp
 @include("admin.common.form.primary", $form_data)
 
-<script src="{{ asset('public/backend/js/additional-method.min.js') }}"></script>
+<script src="{{ asset('backend/js/additional-method.min.js') }}"></script>
 
 <script type="text/javascript">
    $(document).ready(function () {

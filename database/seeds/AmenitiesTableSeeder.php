@@ -12,7 +12,6 @@ class AmenitiesTableSeeder extends Seeder
     public function run()
     {
         DB::table('amenities')->truncate();
-    	
         DB::table('amenities')->insert([
         		['type_id' => '1', 'title' => 'Essentials','description' => 'Towels, bed sheets, soap and toilet paper','symbol' => 'essentials'],
         		['type_id' => '1', 'title' => 'TV','description' => '','symbol' => 'tv'],

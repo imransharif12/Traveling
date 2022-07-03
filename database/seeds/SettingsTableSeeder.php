@@ -51,7 +51,7 @@ class SettingsTableSeeder extends Seeder
             ['name' => 'youtube', 'value' => '#', 'type' => 'join_us'],
             ['name' => 'instagram', 'value' => '#', 'type' => 'join_us'],
 
-            ['name' => 'key', 'value' => 'AIzaSyAUevXmCBPElE-UiPcZW77KpuckXZ_iWRc', 'type' => 'googleMap'],
+            ['name' => 'key', 'value' => 'AIzaSyBixYPItnUYTmDlK42fS2icqBvqsZWjRqA', 'type' => 'googleMap'],
 
             ['name' => 'client_id', 'value' => '155732176097-s2b8liiqj6v8l39r25baq31vm3adg8uv.apps.googleusercontent.com', 'type' => 'google'],
             ['name' => 'client_secret', 'value' => 'ltyqX9vFSqkaRjo4-rxphynm', 'type' => 'google'],

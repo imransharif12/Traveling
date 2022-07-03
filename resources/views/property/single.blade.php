@@ -409,7 +409,7 @@
                                     @foreach($property_photos as $row_photos)
                                     <li>
                                         <a class="ns-img"
-                                            href="{{url('public/images/property/'.$property_id.'/'.$row_photos->photo)}}"
+                                            href="{{url('images/property/'.$property_id.'/'.$row_photos->photo)}}"
                                             aria-label="photo"></a>
                                     </li>
                                     @endforeach
@@ -430,12 +430,12 @@
                                 @if($i == 0)
                                 <div class="col-md-12 col-sm-12 mb-2 mt-2 p-2">
                                     <div class="slider-image-container" onclick="lightbox({{$i}})"
-                                        style="background-image:url({{url('public/images/property/'.$property_id.'/'.$row_photos->photo)}});">
+                                        style="background-image:url({{url('images/property/'.$property_id.'/'.$row_photos->photo)}});">
                                     </div>
                                 </div>
                                 @elseif($i <= 4) @if($i==4) <div class="p-2 position-relative">
                                     <div class="view-all gal-img h-110px">
-                                        <img src="{{url('public/images/property/'.$property_id.'/'.$row_photos->photo)}}"
+                                        <img src="{{url('images/property/'.$property_id.'/'.$row_photos->photo)}}"
                                             alt="property-photo" class="img-fluid h-110px rounded"
                                             onclick="lightbox({{$i}})" />
                                         <span class="position-center cursor-pointer"
@@ -446,7 +446,7 @@
                             @else
                             <div class="p-2">
                                 <div class="h-110px gal-img">
-                                    <img src="{{url('public/images/property/'.$property_id.'/'.$row_photos->photo)}}"
+                                    <img src="{{url('images/property/'.$property_id.'/'.$row_photos->photo)}}"
                                         alt="property-photo" class="img-fluid h-110px rounded"
                                         onclick="lightbox({{$i}})" />
                                 </div>
@@ -1286,7 +1286,7 @@
                                 @foreach($property_photos as $row_photos)
                                 <li>
                                     <a class="ns-img"
-                                        href="{{url('public/images/property/'.$property_id.'/'.$row_photos->photo)}}"
+                                        href="{{url('images/property/'.$property_id.'/'.$row_photos->photo)}}"
                                         aria-label="photo"></a>
                                 </li>
                                 @endforeach
@@ -1307,12 +1307,12 @@
                             @if($i == 0)
                             <div class="col-md-12 col-sm-12 mb-2 mt-2 p-2">
                                 <div class="slider-image-container" onclick="lightbox({{$i}})"
-                                    style="background-image:url({{url('public/images/property/'.$property_id.'/'.$row_photos->photo)}});">
+                                    style="background-image:url({{url('images/property/'.$property_id.'/'.$row_photos->photo)}});">
                                 </div>
                             </div>
                             @elseif($i <= 4) @if($i==4) <div class="p-2 position-relative">
                                 <div class="view-all gal-img h-110px">
-                                    <img src="{{url('public/images/property/'.$property_id.'/'.$row_photos->photo)}}"
+                                    <img src="{{url('images/property/'.$property_id.'/'.$row_photos->photo)}}"
                                         alt="property-photo" class="img-fluid h-110px rounded"
                                         onclick="lightbox({{$i}})" />
                                     <span class="position-center cursor-pointer"
@@ -1323,7 +1323,7 @@
                         @else
                         <div class="p-2">
                             <div class="h-110px gal-img">
-                                <img src="{{url('public/images/property/'.$property_id.'/'.$row_photos->photo)}}"
+                                <img src="{{url('images/property/'.$property_id.'/'.$row_photos->photo)}}"
                                     alt="property-photo" class="img-fluid h-110px rounded" onclick="lightbox({{$i}})" />
                             </div>
                         </div>

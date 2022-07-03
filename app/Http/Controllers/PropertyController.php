@@ -127,7 +127,6 @@ class PropertyController extends Controller
 
     public function listing(Request $request, CalendarController $calendar)
     {
-
         $step            = $request->step;
         $property_id     = $request->id;
         $data['step']    = $step;
@@ -312,7 +311,7 @@ class PropertyController extends Controller
                         $name = str_replace(' ', '_', $_FILES["file"]["name"]);
                         $ext = pathinfo($name, PATHINFO_EXTENSION);
                         $image = time() . '_' . $name;
-                        $path = 'public/images/property/' . $property_id;
+                        $path = 'images/property/' . $property_id;
                         if ($ext == 'png' || $ext == 'jpg' || $ext == 'jpeg' || $ext == 'gif' || $ext == 'JPG') {
                             $uploaded = move_uploaded_file($tmp_name, $path . "/" . $image);
                         }

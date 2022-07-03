@@ -84,6 +84,7 @@ class PagesController extends Controller
 
     public function update(Request $request)
     {
+        // dd($request->all());
         if (!$request->isMethod('post')) {
             $data['result'] = Page::find($request->id);
 

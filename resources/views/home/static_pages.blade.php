@@ -14,4 +14,9 @@
         width:100%;
         height: auto;
     }
+    strong {
+    font-weight: 700!important;
+    line-height: inherit!important;
+}
+    
 </style>

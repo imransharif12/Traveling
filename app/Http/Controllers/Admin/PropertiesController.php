@@ -151,6 +151,8 @@ class PropertiesController extends Controller
     public function listing(Request $request, CalendarController $calendar)
     {
 
+        // dd($request->all());
+
         $step            = $request->step;
         $property_id     = $request->id;
 
@@ -309,9 +311,11 @@ class PropertiesController extends Controller
                         'photos' => 'required',
                     ]);
                 } else {
+
                     $validate = Validator::make($request->all(), [
-                        'file' => 'required|file|mimes:jpg,jpeg,bmp,png,gif,JPG',
-                        'file' => 'dimensions:min_width=640,min_height=360'
+                        'file' => 'required',
+                        // 'file' => 'required|file|mimes:jpg,jpeg,bmp,png,gif,JPG',
+                        // 'file' => 'dimensions:min_width=640,min_height=360'
                     ]);
                 }
 
@@ -326,18 +330,32 @@ class PropertiesController extends Controller
                 }
 
                 if($request->crop == "crop") {
-                    $image = $name[0].uniqid().'.'.end($name);
+                    $image = str_replace(' ', '_', $name[0].uniqid().'.'.end($name));
                     $uploaded = file_put_contents($path . $image, $convertedImage);
                 } else {
                     if (isset($_FILES["file"]["name"])) {
+                        $imageArray = [];
                         $tmp_name = $_FILES["file"]["tmp_name"];
                         $name = str_replace(' ', '_', $_FILES["file"]["name"]);
-                        $ext = pathinfo($name, PATHINFO_EXTENSION);
-                        $image = time() . '_' . $name;
-                        $path = 'public/images/property/' . $property_id;
-                        if ($ext == 'png' || $ext == 'jpg' || $ext == 'jpeg' || $ext == 'gif' || $ext == 'JPG') {
-                            $uploaded = move_uploaded_file($tmp_name, $path . "/" . $image);
+                        $files = $request->file('file');
+                        $path = 'images/property/'.$property_id.'/';
+                        foreach ($files as $file) {
+                            $ext=$file->getClientOriginalExtension();
+                            // dd($ext);
+                            $name=$file->getClientOriginalName();
+                            $image = time() . '_' . $name;
+                            if ($ext == 'png' || $ext == 'jpg' || $ext == 'jpeg' || $ext == 'gif' || $ext == 'JPG') {
+                                $uploaded = $file->move($path,$image);
+                                // $uploaded = move_uploaded_file($tmp_name, $path . "/" . $image);
+                            }
+                            $imageArray[] = $image;
                         }
+                        // $ext = pathinfo($name, PATHINFO_EXTENSION);
+                        // $image = time() . '_' . $name;
+                        // $path = 'images/property/' . $property_id;
+                        // if ($ext == 'png' || $ext == 'jpg' || $ext == 'jpeg' || $ext == 'gif' || $ext == 'JPG') {
+                        //     $uploaded = move_uploaded_file($tmp_name, $path . "/" . $image);
+                        // }
                     }
                 }
 
@@ -349,19 +367,22 @@ class PropertiesController extends Controller
                             ->where('property_id',$property_id)
                             ->take(1)->first();
                     }
-                    $photos = new PropertyPhotos;
-                    $photos->property_id = $property_id;
-                    $photos->photo = $image;
-                    if ($photo_exist_first != 0) {
-                        $photos->serial = $photo_exist->serial + 1;
-                    } else {
-                        $photos->serial = $photo_exist_first + 1;
-                    }
-                    if (!$photo_exist_first) {
-                        $photos->cover_photo = 1;
-                    }
-
-                    $photos->save();
+                    foreach ($imageArray as $name) {
+                        $photos = new PropertyPhotos;
+                        $photos->property_id = $property_id;
+                        $photos->photo = $name;
+                        if ($photo_exist_first != 0) {
+                            $photos->serial = $photo_exist->serial + 1;
+                        } else {
+                            $photos->serial = $photo_exist_first + 1;
+                        }
+                        if (!$photo_exist_first) {
+                            $photos->cover_photo = 1;
+                        }
+    
+                        $photos->save();
+                     }
+                  
                     $property_steps = PropertySteps::where('property_id', $property_id)->first();
                     $property_steps->photos = 1;
                     $property_steps->save();

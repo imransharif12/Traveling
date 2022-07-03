@@ -90,7 +90,7 @@
                                                                     <div class="col-md-6 mt-5"
                                                                          id="photo-div-{{ $photo->id }}">
                                                                         <div class="room-image-container200"
-                                                                             style="background-image:url('{{ url('public/images/property/' . $photo->property_id . '/' . $photo->photo) }}');">
+                                                                             style="background-image:url('{{ url('images/property/' . $photo->property_id . '/' . $photo->photo) }}');">
                                                                             @if ($photo->cover_photo == 0)
                                                                                 <a class="photo-delete text-right"
                                                                                    href="javascript:void(0)"
@@ -253,11 +253,11 @@
     @endpush
 
 	@push('scripts')
-		<script type="text/javascript" src="{{ url('public/js/bootbox.min.js') }}"></script>
-		<script src="{{ url('public/js/sweetalert.min.js') }}"></script>
-        <script src="{{ url('public/js/cropper.min.js') }}"></script>
-		<script type="text/javascript" src="{{ url('public/js/jquery.validate.min.js') }}"></script>
-		<script src="{{ url('public/js/additional-method.min.js') }}"></script>
+		<script type="text/javascript" src="{{ url('js/bootbox.min.js') }}"></script>
+		<script src="{{ url('js/sweetalert.min.js') }}"></script>
+        <script src="{{ url('js/cropper.min.js') }}"></script>
+		<script type="text/javascript" src="{{ url('js/jquery.validate.min.js') }}"></script>
+		<script src="{{ url('js/additional-method.min.js') }}"></script>
 
 		<script type="text/javascript">
 			var gl_photo_id = 0;
