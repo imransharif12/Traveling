@@ -94,6 +94,7 @@ return [
     'home'=>[
         'where_want_to_go'         =>'Where do you want to go?',
         'guest'                    =>'Guest',
+        'children'                 =>'Children',
         'search'                   =>'Search',
         'make_your_reservation'    =>'Make Your Reservation',
         'top_destination'          =>'Top Destination',
@@ -258,6 +259,7 @@ return [
 
     'property_single'=>[
        'guest'                =>'Guests',
+       'children'             =>'Childrens',
        'bed'                  =>'Beds',
        'per_night'            =>'Per Night',
        'per_month'            =>'Per Month',

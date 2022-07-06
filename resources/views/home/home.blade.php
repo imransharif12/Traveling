@@ -1,6 +1,9 @@
 @extends('template')
 @push('css')
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/daterangepicker.min.css')}}" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
     <style>
         .vbtn-outline-success:hover {
             background: #1dbf73 !important;
@@ -9,6 +12,8 @@
         .btn-outline-danger:hover {
             background: #dc3545 !important;
         }
+		
+	
     </style>
 @endpush
 
@@ -62,6 +67,16 @@
 											</select>
 										</div>
 									</div>
+									<!-- <div class="col-md-6 mt-5 pt-4">
+										<div class="input-group">
+											<select id="front-search-guests" class="form-control  text-14">
+											<option class="p-4 text-14" value="1">1 {{trans('messages.home.children')}}</option>
+											@for($i=2;$i<=16;$i++)
+												<option  class="p-4 text-14" value="{{ $i }}"> {{ ($i == '16') ? $i.'+ '.trans('messages.home.children') : $i.' '.trans('messages.property_single.children') }} </option>
+											@endfor
+											</select>
+										</div>
+									</div> -->
 
 									<div class="col-md-12 front-search mt-5 pb-3 pt-4">
 										<button type="submit" class="btn vbtn-default btn-block p-3 text-16">{{trans('messages.home.search')}}</button>
@@ -179,6 +194,8 @@
 									</div>
 								</div>
 
+								
+
 								<div class="card-footer text-muted p-0 border-0">
 									<div class="d-flex bg-white justify-content-between pl-2 pr-2 pt-2 mb-3">
 										<div>
@@ -250,6 +267,17 @@
 		</div>
 	</section>
 	@endif
+	<div class="Homeowner_homeownerSection__sV1dE section" id="homeowner">
+		<div class="Homeowner_homeownerContent__Ssk2l">
+			<span class="section-label-sm blue">Become an Evolve Owner</span>
+			<div><h2 class="section-title-sm">Launch Your Vacation Rental Business with Evolve</h2></div>
+			<div class="Homeowner_homeownerSubTitle__glMRN">
+			<span class="Homeowner_subtitle__x1ME2 section-subtitle-sm">
+				Become an Evolve owner and we’ll 
+				handle the hard parts of managing your property (like marketing, 
+				filling your calendar, and supporting your guests). 
+				We do it all for an industry-low management fee of just 10%.</span>
+			</div><a id="homepage_become_homeowner" class="Homeowner_homeownerBtn__B7Ruf btn-primary btn-cta" title="Learn More" target=”_blank” href="https://va4vr.com/">Learn More</a></div></div>
 @stop
 
 @push('scripts')

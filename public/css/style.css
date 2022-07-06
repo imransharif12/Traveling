@@ -61,9 +61,16 @@ a {
 	color: #222325;
 }
 
+
 a:hover {
 	text-decoration: none;
-	color: #1dbf73 !important;
+	color: white !important;
+	border: none;
+}
+.btn-primary:focus{
+	border-color: #1dbf73!important;
+	box-shadow: none!important;
+	
 }
 
 .main-banner {
@@ -1162,6 +1169,91 @@ ul.customlisting li {
         height: 84px
 	}
 
+	.Homeowner_homeownerSection__sV1dE {
+		background-color: #ddf4f7;
+		background-image: url(https://evolve.com/assets/images/homepage-homeowner.svg);
+		/* background-image: url(/assets/images/homepage-homeowner.svg); */
+		background-position: 95% calc(100% + 0.25rem);
+		background-repeat: no-repeat;
+		background-size: 800px;
+	}
+	.Homeowner_homeownerContent__Ssk2l {
+		padding: 100px;
+		margin: 0 auto;
+		max-width: 1095px;
+	}
+	.blue {
+		color: #1ab2c5;
+	}
+	.section-label-sm {
+		font-size: 1rem;
+		line-height: 1.05rem;
+	}
+	
+	@media only screen and (min-width: 899px)
+	{
+	.section-label-sm {
+		margin: 0.5rem 0 1rem;
+	}
+	}
+	@media only screen and (max-width: 1280px)
+	{
+	.Homeowner_homeownerSubTitle__glMRN {
+		max-width: 400px;
+	}
+	}
+	.Homeowner_subtitle__x1ME2 {
+		font-weight: 400;
+	}
+	.Homeowner_homeownerBtn__B7Ruf {
+		margin-top: 15px;
+	}
+	.section-label-sm {
+		display: block;
+		font-family: Nunito,sans-serif;
+		font-size: 15px;
+		font-weight: 700;
+		letter-spacing: 2.5px;
+		line-height: 1.2rem;
+		text-transform: uppercase;
+	}
+	.section-title-sm {
+		font-size: 2.375rem;
+		line-height: 2.75rem;
+		margin: 8px 0;
+		font-weight: 800;
+		color: #093f46;
+		display: block;
+		font-size: 38px;
+		line-height: 40px;
+		font-family: "Nunito",sans-serif;
+		letter-spacing: -.38px;
+	}
+	.section-subtitle-sm {
+		
+		color: #093f45;
+		
+		display: block;
+		font-family: "Montserrat",sans-serif;
+		font-size: 20px;
+		font-weight: 500;
+		line-height: 2.6rem;
+		margin-bottom: 1rem;
+	}
+	.btn-primary {
+		border-radius: 4px;
+		display: inline-block;
+		font-weight: 600;
+		max-height: 50px;
+		text-decoration: none;
+		background-color: #1dbf73!important;
+		border: none;
+		color: #fff;
+		line-height: .9375rem;
+		padding: 17px 33px;
+		text-align: center;
+		white-space: nowrap;
+	}
 	.img-60x60 {
 		width: 60px;
 		height: 60px;
