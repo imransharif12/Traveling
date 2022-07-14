@@ -37,6 +37,26 @@
             <span class="text-danger">{{ $errors->first('price') }}</span>
           </div>
           <div class="col-md-8">
+            <label for="listing_price_native" class="label-large">{{trans('messages.listing_price.additional_price_input')}} </label>
+            <div class="input-addon">
+              <span class="input-prefix pay-currency">{!! $result->property_price->currency->org_symbol !!}</span>
+              <input type="text" data-suggested="" id="price-night" value="{{ ($result->property_price->original_price == 0) ? '' : $result->property_price->original_price }}" name="additional_price" class="money-input form-control">
+              
+              
+            </div>
+            <span class="text-danger">{{ $errors->first('price') }}</span>
+          </div>
+          <div class="col-md-8">
+            <label for="listing_price_native" class="label-large">{{trans('messages.listing_price.tax_price')}} </label>
+            <div class="input-addon">
+              <span class="input-prefix pay-currency">{!! $result->property_price->currency->org_symbol !!}</span>
+              <input type="text" data-suggested="" id="price-night" value="{{ ($result->property_price->original_price == 0) ? '' : $result->property_price->original_price }}" name="tax_price" class="money-input form-control">
+              <span class="input-prefix pay-currency">%</span>
+
+            </div>
+            <span class="text-danger">{{ $errors->first('price') }}</span>
+          </div>
+          <div class="col-md-8">
             <label class="label-large">{{trans('messages.listing_price.currency')}}</label>
             <select id='price-select-currency_code' name="currency_code" class='form-control'>
               @foreach($currency as $key => $value)

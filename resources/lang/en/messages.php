@@ -383,6 +383,8 @@ return [
     ],
     'listing_price'=>[
        'base_price'           =>'Base price',
+       'additional_price_input'     =>'Additional Price',
+       'tax_price'            =>'Tax Price',
        'night_price'          =>'Nightly Price',
        'currency'             =>'Currency',
        'access_offer'         =>'You can offer discounts for longer stays by setting',
