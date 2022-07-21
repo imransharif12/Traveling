@@ -38,34 +38,34 @@ class HomeController extends Controller
 
     public function index()
     {
-        // $data['starting_cities'] = StartingCities::getAll();
-        // $data['properties']          = Properties::recommendedHome();
-        // $data['testimonials']        = Testimonials::getAll();
-        // $sessionLanguage             = Session::get('language');
-        // $language                    = Settings::getAll()->where('name', 'default_language')->where('type', 'general')->first();
+        $data['starting_cities'] = StartingCities::getAll();
+        $data['properties']          = Properties::recommendedHome();
+        $data['testimonials']        = Testimonials::getAll();
+        $sessionLanguage             = Session::get('language');
+        $language                    = Settings::getAll()->where('name', 'default_language')->where('type', 'general')->first();
 
-        // $languageDetails             = language::where(['id' => $language->value])->first();
+        $languageDetails             = language::where(['id' => $language->value])->first();
 
-        // if (!($sessionLanguage)) {
-        //     Session::pull('language');
-        //     Session::put('language', $languageDetails->short_name);
-        //     App::setLocale($languageDetails->short_name);
-        // }
+        if (!($sessionLanguage)) {
+            Session::pull('language');
+            Session::put('language', $languageDetails->short_name);
+            App::setLocale($languageDetails->short_name);
+        }
 
-        // $pref = Settings::getAll();
+        $pref = Settings::getAll();
 
-        // $prefer = [];
+        $prefer = [];
 
-        // if (!empty($pref)) {
-        //     foreach ($pref as $value) {
-        //         $prefer[$value->name] = $value->value;
-        //     }
-        //     Session::put($prefer);
-        // }
-        // $data['date_format'] = Settings::getAll()->firstWhere('name', 'date_format_type')->value;
+        if (!empty($pref)) {
+            foreach ($pref as $value) {
+                $prefer[$value->name] = $value->value;
+            }
+            Session::put($prefer);
+        }
+        $data['date_format'] = Settings::getAll()->firstWhere('name', 'date_format_type')->value;
 
-        // return view('home.home', $data);
-        return view('errors.404');
+        return view('home.home', $data);
+        // return view('errors.404');
 
     }
 

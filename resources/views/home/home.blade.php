@@ -236,8 +236,12 @@
 			<div class="container">
 				<div class="row">
 					<div class="recommandedhead section-intro text-center mt-70">
-						<p class="animated fadeIn text-24 text-color font-weight-700 m-0">{{ trans('messages.home.say_about_us') }}</p>
+						<p class="animated  fadeIn text-24  font-weight-700 m-0">{{ trans('messages.home.say_about_us') }}</p>
 						<p class="mt-2">{{trans('messages.home.people_say')}}</p>
+						<a href="https://www.trustpilot.com/review/searchastay.com" target="_blank">
+						<img src="{{asset('front/images/trustpilot-vector-logo.png')}}"  alt="logo" style="width: 200px;">
+					</a>
+
 					</div>
 				</div>
 
@@ -246,6 +250,7 @@
 					<?php $i = 0; ?>
 						<div class="col-md-4 mt-4">
 							<div class="item h-100 card-1">
+								
 								<img src="{{$testimonial->image_url}}" alt="{{$testimonial->name}}">
 								<div class="name">{{$testimonial->name}}</div>
 									<small class="desig">{{$testimonial->designation}}</small>
