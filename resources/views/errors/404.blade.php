@@ -20,7 +20,7 @@ body {
         <div class="notfound position-center">
             <div class="notfound-404">
               <h2>Coming Soon</h2>
-              <img src="{{asset('front/images/logos/logo.png')}}"  alt="logo" style="width: 200px;height: 200px;">
+              <img src="{{asset('front/images/logos/logo.jpg')}}"  alt="logo" style="width: 200px;height: 200px;">
             </div>
             {{-- <h2 class="text-center">{{trans('messages.error.error_data_1')}}  {{trans('messages.error.error_data_2')}}</h2> --}}
           </div>
