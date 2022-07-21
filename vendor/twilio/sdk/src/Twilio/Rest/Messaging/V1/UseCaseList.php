@@ -9,17 +9,17 @@
 
 namespace Twilio\Rest\Messaging\V1;
 
+use Twilio\Exceptions\TwilioException;
 use Twilio\ListResource;
-use Twilio\Stream;
 use Twilio\Values;
 use Twilio\Version;
 
 /**
  * PLEASE NOTE that this class contains beta products that are subject to change. Use them with caution.
  */
-class UseCaseList extends ListResource {
+class UsecaseList extends ListResource {
     /**
-     * Construct the UseCaseList
+     * Construct the UsecaseList
      *
      * @param Version $version Version that contains the resource
      */
@@ -29,85 +29,19 @@ class UseCaseList extends ListResource {
         // Path Solution
         $this->solution = [];
 
-        $this->uri = '/a2p/UseCases';
+        $this->uri = '/Services/Usecases';
     }
 
     /**
-     * Streams UseCaseInstance records from the API as a generator stream.
-     * This operation lazily loads records as efficiently as possible until the
-     * limit
-     * is reached.
-     * The results are returned as a generator, so this operation is memory
-     * efficient.
+     * Fetch the UsecaseInstance
      *
-     * @param int $limit Upper limit for the number of records to return. stream()
-     *                   guarantees to never return more than limit.  Default is no
-     *                   limit
-     * @param mixed $pageSize Number of records to fetch per request, when not set
-     *                        will use the default value of 50 records.  If no
-     *                        page_size is defined but a limit is defined, stream()
-     *                        will attempt to read the limit with the most
-     *                        efficient page size, i.e. min(limit, 1000)
-     * @return Stream stream of results
+     * @return UsecaseInstance Fetched UsecaseInstance
+     * @throws TwilioException When an HTTP error occurs.
      */
-    public function stream(int $limit = null, $pageSize = null): Stream {
-        $limits = $this->version->readLimits($limit, $pageSize);
+    public function fetch(): UsecaseInstance {
+        $payload = $this->version->fetch('GET', $this->uri);
 
-        $page = $this->page($limits['pageSize']);
-
-        return $this->version->stream($page, $limits['limit'], $limits['pageLimit']);
-    }
-
-    /**
-     * Reads UseCaseInstance records from the API as a list.
-     * Unlike stream(), this operation is eager and will load `limit` records into
-     * memory before returning.
-     *
-     * @param int $limit Upper limit for the number of records to return. read()
-     *                   guarantees to never return more than limit.  Default is no
-     *                   limit
-     * @param mixed $pageSize Number of records to fetch per request, when not set
-     *                        will use the default value of 50 records.  If no
-     *                        page_size is defined but a limit is defined, read()
-     *                        will attempt to read the limit with the most
-     *                        efficient page size, i.e. min(limit, 1000)
-     * @return UseCaseInstance[] Array of results
-     */
-    public function read(int $limit = null, $pageSize = null): array {
-        return \iterator_to_array($this->stream($limit, $pageSize), false);
-    }
-
-    /**
-     * Retrieve a single page of UseCaseInstance records from the API.
-     * Request is executed immediately
-     *
-     * @param mixed $pageSize Number of records to return, defaults to 50
-     * @param string $pageToken PageToken provided by the API
-     * @param mixed $pageNumber Page Number, this value is simply for client state
-     * @return UseCasePage Page of UseCaseInstance
-     */
-    public function page($pageSize = Values::NONE, string $pageToken = Values::NONE, $pageNumber = Values::NONE): UseCasePage {
-        $params = Values::of(['PageToken' => $pageToken, 'Page' => $pageNumber, 'PageSize' => $pageSize, ]);
-
-        $response = $this->version->page('GET', $this->uri, $params);
-
-        return new UseCasePage($this->version, $response, $this->solution);
-    }
-
-    /**
-     * Retrieve a specific page of UseCaseInstance records from the API.
-     * Request is executed immediately
-     *
-     * @param string $targetUrl API-generated URL for the requested results page
-     * @return UseCasePage Page of UseCaseInstance
-     */
-    public function getPage(string $targetUrl): UseCasePage {
-        $response = $this->version->getDomain()->getClient()->request(
-            'GET',
-            $targetUrl
-        );
-
-        return new UseCasePage($this->version, $response, $this->solution);
+        return new UsecaseInstance($this->version, $payload);
     }
 
     /**
@@ -116,6 +50,6 @@ class UseCaseList extends ListResource {
      * @return string Machine friendly representation
      */
     public function __toString(): string {
-        return '[Twilio.Messaging.V1.UseCaseList]';
+        return '[Twilio.Messaging.V1.UsecaseList]';
     }
 }

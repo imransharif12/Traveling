@@ -657,9 +657,9 @@ class Mock implements MockInterface
     {
         $rfc = new \ReflectionClass($this);
 
-        // PHP 8 has Stringable interface
+        // HHVM has a Stringish interface and PHP 8 has Stringable
         $interfaces = array_filter($rfc->getInterfaces(), function ($i) {
-            return $i->getName() !== 'Stringable';
+            return $i->getName() !== 'Stringish' && $i->getName() !== 'Stringable';
         });
 
         return false === $rfc->getParentClass() && 2 === count($interfaces);
@@ -707,12 +707,11 @@ class Mock implements MockInterface
     {
         $rm = $this->mockery_getMethod($name);
 
-        // Default return value for methods with nullable type is null
-        if ($rm === null || $rm->getReturnType() === null || $rm->getReturnType()->allowsNull()) {
+        if ($rm === null) {
             return null;
         }
 
-        $returnType = Reflector::getReturnType($rm, true);
+        $returnType = Reflector::getSimplestReturnType($rm);
 
         switch ($returnType) {
             case null:     return null;
@@ -799,7 +798,7 @@ class Mock implements MockInterface
             throw new BadMethodCallException(
                 'Static method ' . $associatedRealObject->mockery_getName() . '::' . $method
                 . '() does not exist on this mock object',
-                null,
+                0,
                 $e
             );
         }

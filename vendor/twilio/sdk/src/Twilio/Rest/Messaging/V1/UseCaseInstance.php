@@ -17,13 +17,11 @@ use Twilio\Version;
 /**
  * PLEASE NOTE that this class contains beta products that are subject to change. Use them with caution.
  *
- * @property string $name
- * @property string $code
- * @property string $description
+ * @property array[] $usecases
  */
-class UseCaseInstance extends InstanceResource {
+class UsecaseInstance extends InstanceResource {
     /**
-     * Initialize the UseCaseInstance
+     * Initialize the UsecaseInstance
      *
      * @param Version $version Version that contains the resource
      * @param mixed[] $payload The response payload
@@ -32,11 +30,7 @@ class UseCaseInstance extends InstanceResource {
         parent::__construct($version);
 
         // Marshaled Properties
-        $this->properties = [
-            'name' => Values::array_get($payload, 'name'),
-            'code' => Values::array_get($payload, 'code'),
-            'description' => Values::array_get($payload, 'description'),
-        ];
+        $this->properties = ['usecases' => Values::array_get($payload, 'usecases'), ];
 
         $this->solution = [];
     }
@@ -67,6 +61,6 @@ class UseCaseInstance extends InstanceResource {
      * @return string Machine friendly representation
      */
     public function __toString(): string {
-        return '[Twilio.Messaging.V1.UseCaseInstance]';
+        return '[Twilio.Messaging.V1.UsecaseInstance]';
     }
 }

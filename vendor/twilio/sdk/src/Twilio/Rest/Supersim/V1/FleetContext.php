@@ -59,8 +59,10 @@ class FleetContext extends InstanceContext {
         $data = Values::of([
             'UniqueName' => $options['uniqueName'],
             'NetworkAccessProfile' => $options['networkAccessProfile'],
-            'CommandsUrl' => $options['commandsUrl'],
-            'CommandsMethod' => $options['commandsMethod'],
+            'IpCommandsUrl' => $options['ipCommandsUrl'],
+            'IpCommandsMethod' => $options['ipCommandsMethod'],
+            'SmsCommandsUrl' => $options['smsCommandsUrl'],
+            'SmsCommandsMethod' => $options['smsCommandsMethod'],
         ]);
 
         $payload = $this->version->update('POST', $this->uri, [], $data);

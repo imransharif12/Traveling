@@ -16,7 +16,7 @@ use Twilio\Version;
 /**
  * PLEASE NOTE that this class contains beta products that are subject to change. Use them with caution.
  */
-class UseCasePage extends Page {
+class UsecasePage extends Page {
     /**
      * @param Version $version Version that contains the resource
      * @param Response $response Response from the API
@@ -31,10 +31,10 @@ class UseCasePage extends Page {
 
     /**
      * @param array $payload Payload response from the API
-     * @return UseCaseInstance \Twilio\Rest\Messaging\V1\UseCaseInstance
+     * @return UsecaseInstance \Twilio\Rest\Messaging\V1\UsecaseInstance
      */
-    public function buildInstance(array $payload): UseCaseInstance {
-        return new UseCaseInstance($this->version, $payload);
+    public function buildInstance(array $payload): UsecaseInstance {
+        return new UsecaseInstance($this->version, $payload);
     }
 
     /**
@@ -43,6 +43,6 @@ class UseCasePage extends Page {
      * @return string Machine friendly representation
      */
     public function __toString(): string {
-        return '[Twilio.Messaging.V1.UseCasePage]';
+        return '[Twilio.Messaging.V1.UsecasePage]';
     }
 }
