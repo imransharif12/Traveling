@@ -100,14 +100,14 @@ return [
         'top_destination'          =>'Top Destination',
         'recommended_home'         =>'Recommended Home',
         'about_us'                 =>'Say about Us',
-        'people_say'               =>'People Say The Nicest Things',
+        'people_say'               =>'Verified By Trustpilot',
         'choose_language'          =>'Choose Your Language',
         'choose_currency'          =>'Choose a Currency',
         'all_rights_reserved'      =>'Searchastay Copyrights reserved© 2022. Website design & developed by',
         'trendgotviral'            =>'Trendgotviral',
         'destination_slogan'       =>'Best places where to live in the world and enjoy your trip',
         'recommended_slogan'       => 'Alluring home where you can stay and enjoy a comfortable life.',
-        'say_about_us'             =>'Say about Us'
+        'say_about_us'             =>'What Our Client Says'
 
     ],
 
