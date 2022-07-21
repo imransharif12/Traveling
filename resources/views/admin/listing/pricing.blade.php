@@ -36,26 +36,8 @@
             </div>
             <span class="text-danger">{{ $errors->first('price') }}</span>
           </div>
-          <div class="col-md-8">
-            <label for="listing_price_native" class="label-large">{{trans('messages.listing_price.additional_price_input')}} </label>
-            <div class="input-addon">
-              <span class="input-prefix pay-currency">{!! $result->property_price->currency->org_symbol !!}</span>
-              <input type="text" data-suggested="" id="price-night" value="{{ ($result->property_price->original_price == 0) ? '' : $result->property_price->original_price }}" name="additional_price" class="money-input form-control">
-              
-              
-            </div>
-            <span class="text-danger">{{ $errors->first('price') }}</span>
-          </div>
-          <div class="col-md-8">
-            <label for="listing_price_native" class="label-large">{{trans('messages.listing_price.tax_price')}} </label>
-            <div class="input-addon">
-              <span class="input-prefix pay-currency">{!! $result->property_price->currency->org_symbol !!}</span>
-              <input type="text" data-suggested="" id="price-night" value="{{ ($result->property_price->original_price == 0) ? '' : $result->property_price->original_price }}" name="tax_price" class="money-input form-control">
-              <span class="input-prefix pay-currency">%</span>
-
-            </div>
-            <span class="text-danger">{{ $errors->first('price') }}</span>
-          </div>
+          
+          
           <div class="col-md-8">
             <label class="label-large">{{trans('messages.listing_price.currency')}}</label>
             <select id='price-select-currency_code' name="currency_code" class='form-control'>
@@ -160,6 +142,17 @@
               </div>
             </div>
           </div>
+
+          <div id="security" class="{{($result->property_price->original_security_fee == 0)?'display-off':''}}">
+            <div class="col-md-12">
+              <div class="col-md-4 l-pad-none">
+                <div class="input-addon">
+                  <span class="input-prefix pay-currency">{!! $result->property_price->currency->org_symbol !!}</span>
+                  <input type="text" class="money-input" data-extras="true" value="{{ $result->property_price->original_security_fee }}" id="price-security" name="security_fee" class="autosubmit-text input-stem input-large" data-saving="additional-saving">
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="col-md-12">
             <label for="listing_cleaning_fee_native_checkbox" class="label-large label-inline">
               <input type="checkbox" class="pricing_checkbox" data-rel="weekend" {{($result->property_price->original_weekend_price == 0)?'':'checked="checked"'}}> &nbsp
@@ -176,6 +169,45 @@
               </div>
             </div>
           </div>
+
+          <div class="col-md-12">
+            <label for="listing_cleaning_fee_native_checkbox" class="label-large label-inline">
+              <input type="checkbox" class="pricing_checkbox" data-rel="additional-price" {{($result->property_price->original_guest_fee == 0)?'':'checked="checked"'}}>&nbsp
+              {{trans('messages.listing_price.additional_price_input')}}
+            </label>
+          </div>
+          <div id="additional-price" class="display-off">
+            <div class="col-md-12">
+              <div class="col-md-3 l-pad-none">
+                <div class="input-addon">
+                  <span class="input-prefix pay-currency">{!! $result->property_price->currency->org_symbol !!}</span>
+                  <input type="text" data-extras="true" value="{{ $result->property_price->original_guest_fee }}" id="price-extra_person" name="additional_price" class="money-input" data-saving="additional-saving">
+                </div>
+              </div>
+              <div class="col-md-3">
+                <input type="text" placeholder="{{trans('messages.listing_price.additional_price_input')}} Name" data-extras="true" value="" id="price-extra_person" name="additional_price_name" class="money-input" data-saving="additional-saving">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <label for="listing_cleaning_fee_native_checkbox" class="label-large label-inline">
+              <input type="checkbox" class="pricing_checkbox" data-rel="text-price" {{($result->property_price->original_guest_fee == 0)?'':'checked="checked"'}}>&nbsp
+              {{trans('messages.listing_price.tax_price')}}
+            </label>
+          </div>
+          <div id="text-price" class="display-off">
+            <div class="col-md-12">
+              <div class="col-md-3 l-pad-none">
+                <div class="input-addon">
+                  <span class="input-prefix pay-currency">{!! $result->property_price->currency->org_symbol !!}</span>
+                  <input type="text" data-extras="true" value="{{ $result->property_price->original_guest_fee }}" id="price-extra_person" name="text_price" class="money-input" data-saving="additional-saving">
+                </div>
+              </div>
+             
+            </div>
+          </div>
+         
         </div>
         <div class="row">
           <div class="col-md-6 col-xs-6 text-left">
