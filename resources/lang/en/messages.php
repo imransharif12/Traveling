@@ -383,7 +383,7 @@ return [
     ],
     'listing_price'=>[
        'base_price'           =>'Base price',
-       'additional_price_input'     =>'Additional Price',
+       'additional_price_input'   =>'Additional Price',
        'tax_price'            =>'Tax Price',
        'night_price'          =>'Nightly Price',
        'currency'             =>'Currency',
