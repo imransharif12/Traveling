@@ -184,7 +184,7 @@
               <div class="col-md-3 l-pad-none">
                 <div class="input-addon">
                   <span class="input-prefix pay-currency">{!! $result->property_price->currency->org_symbol !!}</span>
-                  <input type="text" data-extras="true" value="{{ $result->property_price->original_guest_fee }}" id="price-extra_person" name="additional_price" class="money-input" data-saving="additional-saving">
+                  <input type="text" data-extras="true" value="" id="price-extra_person" name="additional_price" class="money-input" data-saving="additional-saving">
                 </div>
               </div>
              
