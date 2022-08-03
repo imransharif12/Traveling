@@ -33,7 +33,7 @@
                                     <div class="w-100">
                                         <div class="dropdown-menu dropdown-menu-location" aria-labelledby="dropdownMenuButton">
                                             <div class="row p-3">
-                                                <form id="front-search-form" method="post" action="{{url('search')}}">
+                                                <form id="front-search-form" method="get" action="{{url('search')}}">
                                                     {{ csrf_field() }}
                                                     <div class="row">
                                                         <div class="col-md-12">

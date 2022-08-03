@@ -178,7 +178,7 @@
           </div>
           <div id="additional-price" class="display-off">
             <div class="col-md-12">
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <input type="text" placeholder="{{trans('messages.listing_price.additional_price_input')}} Name" data-extras="true" value="" id="price-extra_person" name="additional_price_name" class="money-input" data-saving="additional-saving">
               </div>
               <div class="col-md-3 l-pad-none">
