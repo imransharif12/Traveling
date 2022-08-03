@@ -185,7 +185,7 @@
                 </div>
               </div>
               <div class="col-md-3">
-                <input type="text" placeholder="{{trans('messages.listing_price.additional_price_input')}} Name" data-extras="true" value="" id="price-extra_person" name="additional_price_name" class="money-input" data-saving="additional-saving">
+                <input type="text" placeholder="{{trans('messages.listing_price.additional_price_input')}} Name" data-extras="true" value="" id="tax_price" name="additional_price_name" class="money-input" data-saving="additional-saving">
               </div>
             </div>
           </div>
