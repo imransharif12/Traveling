@@ -64,7 +64,6 @@ a {
 
 a:hover {
 	text-decoration: none;
-	color: white !important;
 	border: none;
 }
 .btn-primary:focus{
