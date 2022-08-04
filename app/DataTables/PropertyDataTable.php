@@ -51,7 +51,8 @@ class PropertyDataTable extends DataTable
         $status     = isset(request()->status) ? request()->status : null;
         $from = isset(request()->from) ? setDateForDb(request()->from) : null;
         $to = isset(request()->to) ? setDateForDb(request()->to) : null;
-        $space_type = isset(request()->to) ? setDateForDb(request()->to) : null;
+        $space_type = isset(request()->space_type) ? request()->space_type : null;
+        
 
         $query = Properties::with(['users:id,first_name,profile_image']);
         if (isset($user_id)) {
@@ -68,9 +69,12 @@ class PropertyDataTable extends DataTable
         if ($status) {
             $query->where('status', '=', $status);
         }
+
+
         if ($space_type) {
             $query->where('space_type', '=', $space_type);
         }
+   
         return $this->applyScopes($query);
     }
 
