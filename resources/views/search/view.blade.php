@@ -1,7 +1,7 @@
 @extends('maptemplate')
 @push('css')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/daterangepicker.min.css')}}" />
-<link href="{{ url('public/css/bootstrap-slider.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ url('css/bootstrap-slider.min.css') }}" rel="stylesheet" type="text/css" />
     <style>
         .vbtn-outline-success:hover {
             background: #1dbf73 !important;
@@ -105,9 +105,11 @@
 
                                 <div class="dropdown-menu dropdown-menu-room-type" aria-labelledby="dropdownRoomType">
                                     <div class="row p-3">
+                                        
                                         @foreach($space_type as $rws=>$value)
                                             <div class="col-md-12">
                                                 @if($rws==1)
+                                                
                                                     <div class="d-flex justify-content-between pr-4">
                                                         <div>
                                                             <p class="text-16"><i class="icon icon-entire-place"></i> {{ $value }}</p>
@@ -437,16 +439,16 @@
 
     @push('scripts')
     <script type="text/javascript" src='https://maps.google.com/maps/api/js?key={{ @$map_key }}&libraries=places'></script>
-	<script type="text/javascript" src="{{ url('public/js/front.min.js') }}"></script>
-	<script type="text/javascript" src="{{ url('public/js/jquery-ui.js') }}"></script>
+	<script type="text/javascript" src="{{ url('js/front.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url('js/jquery-ui.js') }}"></script>
     @auth
-        <script src="{{ url('public/js/sweetalert.min.js') }}"></script>
+        <script src="{{ url('js/sweetalert.min.js') }}"></script>
     @endauth
 	<!-- daterangepicker -->
-	<script type="text/javascript" src="{{ url('public/js/moment.min.js') }}"></script>
-	<script type="text/javascript" src="{{ url('public/js/daterangepicker.min.js')}}"></script>
-    <script src="{{ url('public/js/locationpicker.jquery.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url('public/js/daterangecustom.js')}}"></script>
+	<script type="text/javascript" src="{{ url('js/moment.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url('js/daterangepicker.min.js')}}"></script>
+    <script src="{{ url('js/locationpicker.jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url('js/daterangecustom.js')}}"></script>
     <script type="text/javascript">
 		$(function() {
             var checkin = $('#startDate').val();
@@ -458,7 +460,7 @@
     <script>
         $.fn.slider = null;
     </script>
-    <script src="{{ url('public/js/bootstrap-slider.min.js') }}"></script>
+    <script src="{{ url('js/bootstrap-slider.min.js') }}"></script>
     <script type="text/javascript">
         var markers      = [];
         var allowRefresh = true;

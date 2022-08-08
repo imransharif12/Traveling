@@ -33,6 +33,7 @@ class SearchController extends Controller
         $location = $request->input('location');
         $address = str_replace(" ", "+", "$location");
 
+
         $map_where = 'https://maps.google.com/maps/api/geocode/json?key=' . MAP_KEY . '&address=' . $address . '&sensor=false';
         $geocode = $this->content_read($map_where);
         $json = json_decode($geocode);
