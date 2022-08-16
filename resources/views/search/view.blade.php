@@ -233,7 +233,7 @@
                 <!-- No result found section start -->
                 <div class="row mt-4">
                     <div id="loader" class="display-off loader-img position-center">
-                        <img src="{{URL::to('/')}}/public/front/img/green-loader.gif" alt="loader">
+                        <img src="{{URL::to('/')}}/front/img/green-loader.gif" alt="loader">
                     </div>
                 </div>
 

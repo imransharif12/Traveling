@@ -119,13 +119,13 @@
 @stop
 
 @section('validate_script')
-<script src="{{URL::to('/')}}/public/backend/plugins/ECharts/echarts.min.js"></script>
-<script src="{{URL::to('/')}}/public/backend/plugins/ECharts/echarts-gl.min.js"></script>
-<script src="{{URL::to('/')}}/public/backend/plugins/ECharts/ecStat.min.js"></script>
-<script src="{{URL::to('/')}}/public/backend/plugins/ECharts/dataTool.min.js"></script>
-<script src="{{URL::to('/')}}/public/backend/plugins/ECharts/china.js"></script>
-<script src="{{URL::to('/')}}/public/backend/plugins/ECharts/world.js"></script>
-<script src="{{URL::to('/')}}/public/backend/plugins/ECharts/simplex.js"></script>
+<script src="{{URL::to('/')}}/backend/plugins/ECharts/echarts.min.js"></script>
+<script src="{{URL::to('/')}}/backend/plugins/ECharts/echarts-gl.min.js"></script>
+<script src="{{URL::to('/')}}/backend/plugins/ECharts/ecStat.min.js"></script>
+<script src="{{URL::to('/')}}/backend/plugins/ECharts/dataTool.min.js"></script>
+<script src="{{URL::to('/')}}/backend/plugins/ECharts/china.js"></script>
+<script src="{{URL::to('/')}}/backend/plugins/ECharts/world.js"></script>
+<script src="{{URL::to('/')}}/backend/plugins/ECharts/simplex.js"></script>
 
 <script type="text/javascript">
 	// based on prepared DOM, initialize echarts instance

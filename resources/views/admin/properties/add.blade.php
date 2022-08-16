@@ -196,8 +196,8 @@
 
 
 @push('scripts')
-<script src="{{ asset('public/backend/js/intl-tel-input-13.0.0/build/js/intlTelInput.js')}}" type="text/javascript"></script>
-<script src="{{ asset('public/backend/js/isValidPhoneNumber.js') }}" type="text/javascript"></script>
+<script src="{{ asset('backend/js/intl-tel-input-13.0.0/build/js/intlTelInput.js')}}" type="text/javascript"></script>
+<script src="{{ asset('backend/js/isValidPhoneNumber.js') }}" type="text/javascript"></script>
 <script type="text/javascript">
   
         jQuery.validator.addMethod("laxEmail", function(value, element) {

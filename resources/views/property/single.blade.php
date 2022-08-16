@@ -801,7 +801,7 @@
                     <div id="book_it" class="mt-4">
                         <div class="js-subtotal-container booking-subtotal panel-padding-fit">
                             <div id="loader" class="display-off single-load">
-                                <img src="{{URL::to('/')}}/public/front/img/green-loader.gif" alt="loader">
+                                <img src="{{URL::to('/')}}/front/img/green-loader.gif" alt="loader">
                             </div>
                             <div class="table-responsive price-table-scroll">
                                 <table class="table table-bordered price_table" id="booking_table">

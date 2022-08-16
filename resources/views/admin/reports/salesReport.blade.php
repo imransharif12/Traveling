@@ -71,8 +71,8 @@
 @stop
 
 @section('validate_script')
-<script src="{{URL::to('/')}}/public/backend/plugins/highcharts/highcharts.js"></script>
-<script src="{{URL::to('/')}}/public/backend/plugins/highcharts/exporting.js"></script>
+<script src="{{URL::to('/')}}/backend/plugins/highcharts/highcharts.js"></script>
+<script src="{{URL::to('/')}}/backend/plugins/highcharts/exporting.js"></script>
 
 <script>
 	Highcharts.chart('container', {
