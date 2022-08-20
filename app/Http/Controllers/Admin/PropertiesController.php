@@ -399,7 +399,6 @@ class PropertiesController extends Controller
         else if ($step == 'pricing') {
             
             if ($request->isMethod('post')) {
-                dd("imran");
                 $bookings = Bookings::where('property_id', $property_id)->where('currency_code', '!=', $request->currency_code)->first();
                 if($bookings) {
                     $this->helper->one_time_message('error', trans('messages.error.currency_change'));
