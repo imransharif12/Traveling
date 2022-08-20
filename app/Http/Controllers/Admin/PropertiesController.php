@@ -152,7 +152,6 @@ class PropertiesController extends Controller
     public function listing(Request $request, CalendarController $calendar)
     {
 
-        // dd($request->all());
 
         $step            = $request->step;
         $property_id     = $request->id;
@@ -398,7 +397,9 @@ class PropertiesController extends Controller
                                 ->get();
         }
         else if ($step == 'pricing') {
+            
             if ($request->isMethod('post')) {
+                dd("imran");
                 $bookings = Bookings::where('property_id', $property_id)->where('currency_code', '!=', $request->currency_code)->first();
                 if($bookings) {
                     $this->helper->one_time_message('error', trans('messages.error.currency_change'));
@@ -424,6 +425,7 @@ class PropertiesController extends Controller
                     $property_price->monthly_discount  = $request->monthly_discount;
                     $property_price->currency_code     = $request->currency_code;
                     $property_price->cleaning_fee      = $request->cleaning_fee;
+                    $property_price->additional_price  = $request->additional_price;
                     $property_price->guest_fee         = $request->guest_fee;
                     $property_price->guest_after       = $request->guest_after;
                     $property_price->security_fee      = $request->security_fee;

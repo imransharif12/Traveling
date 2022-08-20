@@ -849,6 +849,13 @@
                                             <td class="pl-4 text-right"><span id="cleaning_fee" value=""> 0 </span></td>
                                         </tr>
 
+                                        <tr class="additional_price">
+                                            <td class="pl-4">
+                                            {{trans('messages.listing_price.additional_price_input')}}
+                                            </td>
+                                            <td class="pl-4 text-right"><span id="additional_price" value=""> 0 </span></td>
+                                        </tr>
+
                                         <tr class="iva_tax">
                                             <td class="pl-4">
                                                 {{trans('messages.property_single.iva_tax')}}
@@ -1856,6 +1863,7 @@ function price_calculation(checkin, checkout, guest){
 				show_loader();
 			},
 			success: function (result) {
+                console.log(result)
 				$('.append_date').remove();
 				if(result.status == 'Not available'){
 					$('.book_btn').addClass('d-none');
@@ -1924,11 +1932,13 @@ function price_calculation(checkin, checkout, guest){
 					else $('.accomodation_tax').addClass('d-none');
 
 					if(result.additional_guest != 0) $('#additional_guest').html(result.additional_guest_fee_with_symbol);
-					else $('.additional_price').addClass('d-none');
 					if(result.security_fee != 0) $('#security_fee').html(result.security_fee_with_symbol);
 					else $('.security_price').addClass('d-none');
 					if(result.cleaning_fee != 0) $('#cleaning_fee').html(result.cleaning_fee_with_symbol);
 					else $('.cleaning_price').addClass('d-none');
+					if(result.additional_price != 0) $('#additional_price').html(result.additional_price_with_symbol);
+                    else $('.additional_price').addClass('d-none');
+                    console.log(result);
 					$('#total').html(result.total_with_symbol);
 					//$('#total_night_price').html(result.total_night_price);
 

@@ -389,8 +389,11 @@ class Common {
         if ($property->property_price->cleaning_fee)
             $result['cleaning_fee'] = $property->property_price->cleaning_fee;
 
+            if ($property->property_price->additional_price)
+            $result['additional_price'] = $property->property_price->additional_price;
+
         $result['total'] = $result['service_fee'] + $result['total_night_price'] + $result['additional_guest']
-            + $result['security_fee'] + $result['cleaning_fee'] + $result['iva_tax'] + $result['accomodation_tax'] - $result['discount'];
+            + $result['security_fee'] + $result['cleaning_fee']+ $result['additional_price']+ $result['iva_tax'] + $result['accomodation_tax'] - $result['discount'];
         $result['subtotal'] = $result['total'];
 
         $result['total_night_price_with_symbol'] = moneyFormat($symbol, numberFormat($result['total_night_price'], $decimals));
@@ -401,6 +404,7 @@ class Common {
         $result['additional_guest_fee_with_symbol'] = moneyFormat($symbol, numberFormat($result['additional_guest'], $decimals));
         $result['security_fee_with_symbol'] = moneyFormat($symbol, numberFormat($result['security_fee'], $decimals));
         $result['cleaning_fee_with_symbol'] = moneyFormat($symbol, numberFormat($result['cleaning_fee'], $decimals));
+        $result['additional_price_with_symbol'] = moneyFormat($symbol, numberFormat($result['additional_price'], $decimals));
         $result['per_night_price_with_symbol'] = moneyFormat($symbol, numberFormat($result['total_night_price'] / $countDays, $decimals));
         $result['discount_with_symbol'] = moneyFormat($symbol, numberFormat($result['discount'], 2));
         $result['currency'] = $this->getCurrentCurrencyCode();

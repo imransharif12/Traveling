@@ -3,14 +3,11 @@
 <div class="container mb-4 margin-top-85 min-height">
 	<div class="d-flex justify-content-center">
 		<div class="p-5 mt-5 mb-5 border w-450" >
-			@if(Session::has('message'))
-				<div class="row mt-3">
-					<div class="col-md-12 p-2 text-center text-14 alert {{ Session::get('alert-class') }} alert-dismissable fade in opacity-1">
-						<a href="#"  class="close text-18" data-dismiss="alert" aria-label="close">&times;</a>
-						{{ Session::get('message') }}
-					</div>
-				</div>
-			@endif
+		<div class="alert alert-success text-center mb-0 d-none" role="alert" id="alert">
+			Thanks for your responce
+			<a href="#"  class="pull-right float-right" data-dismiss="alert">×</a>
+		</div>
+			
                
 			<form id="contact_form" method="post" action="javascript:;"  accept-charset='UTF-8'>
 				{{ csrf_field() }}
@@ -62,7 +59,7 @@ $('#contact_form').on('submit', function(e) {
         success: function(data) {
         if(data.code==200){
             $("#contact_form")[0].reset();
-            alert("Record Submit Succefully")
+			$('.alert-success').removeClass('d-none');
         }
         }
     });

@@ -97,7 +97,7 @@
 							</tr>
 							<tr>
 								<td width="25%">
-									<img src='{{URL::to("/")}}/public/images/flags/flags-medium/{{strtolower($countryCode->code)}}.png' width="35px" height="20px">
+									<img src='{{URL::to("/")}}/images/flags/flags-medium/{{strtolower($countryCode->code)}}.png' width="35px" height="20px">
 								</td>
 								<td>
 									{{ $countryCode->name }}

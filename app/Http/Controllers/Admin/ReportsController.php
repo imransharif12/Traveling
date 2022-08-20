@@ -261,7 +261,6 @@ class ReportsController extends Controller
         $data['totalReservations'] = $totalReservations;
         $data['collections'] = json_encode($collections);
         $data['countryCodes'] = $collections;
-
         return view('admin.reports.overview', $data);
     }
 }

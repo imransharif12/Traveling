@@ -53,14 +53,14 @@
 									</select>
 								</div>
 
-								<div class="form-group col-md-6 pl-5 pr-5">
+								<!-- <div class="form-group col-md-6 pl-5 pr-5">
 									<label for="inputState">{{trans('messages.listing_basic.bed_type')}}</label>
 									<select  name="bed_type"  class="form-control text-16 mt-2">
 										@foreach($bed_type as $key => $value)
 										<option value="{{ $key }}" {{ ($key == $result->bed_type) ? 'selected' : '' }}>{{ $value }}</option>
 										@endforeach
 									</select>
-								</div>
+								</div> -->
 							</div>
 
 							<div class="form-row mt-4 border rounded pb-4">
