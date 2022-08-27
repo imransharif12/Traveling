@@ -377,6 +377,7 @@ class Common {
         $result['additional_guest'] = 0;
         $result['security_fee'] = 0;
         $result['cleaning_fee'] = 0;
+        $result['additional_price'] = 0;
 
         if ($guestCount > $property->property_price->guest_after) {
             $additional_guest_count = $guestCount - $property->property_price->guest_after;

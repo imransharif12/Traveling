@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddPaidToUsersTable extends Migration
+class AddPriceTextToPropertyPriceTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddPaidToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
+        Schema::table('property_price', function (Blueprint $table) {
+            $table->integer('price_text')->default(0);
         });
     }
 
@@ -25,8 +25,8 @@ class AddPaidToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
+        Schema::table('property_price', function (Blueprint $table) {
+            $table->drop('price_text')->default(0);
         });
     }
 }

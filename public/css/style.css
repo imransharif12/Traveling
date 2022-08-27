@@ -67,7 +67,7 @@ a:hover {
 	border: none;
 }
 .btn-primary:focus{
-	border-color: #1dbf73!important;
+	border-color: #1f8884!important;
 	box-shadow: none!important;
 	
 }
@@ -195,14 +195,14 @@ a:hover {
 
 .active-sidebar {
 	font-size: 14px;
-	border-left: 4px solid #1dbf73 !important;
-	color: #1dbf73;
+	border-left: 4px solid #1f8884 !important;
+	color: #1f8884;
 	font-weight: 700;
 	background: #efefef;
 }
 
 .active-sidebar:hover {
-	color: #1dbf73;
+	color: #1f8884;
 }
 
 /* z-index */
@@ -385,7 +385,7 @@ a:hover {
 }
 
 .secondary-text-color {
-	color: #1dbf73;
+	color: #1f8884;
 }
 
 .secondary-text-color-hover:hover {
@@ -393,7 +393,7 @@ a:hover {
 }
 
 .text-color-hover:hover {
-	color: #1dbf73;
+	color: #1f8884;
 }
 
 .primary-text {
@@ -413,7 +413,7 @@ a:hover {
 }
 
 .success-text {
-	color: #1dbf73;
+	color: #1f8884;
 }
 
 .step-inactive {
@@ -475,13 +475,13 @@ a:hover {
 }
 
 .vbadge-success {
-	background: #1dbf73;
+	background: #1f8884;
 	color: #FFF;
 }
 
 /* background color */
 .secondary-bg {
-	background:#1dbf73;
+	background:#1f8884;
 	color: #fff;
 }
 
@@ -500,7 +500,7 @@ a:hover {
 }
 
 .btn-photo {
-	background:#1dbf73;
+	background:#1f8884;
 	color: #fff;
 }
 
@@ -521,7 +521,7 @@ a:hover {
 }
 
 .Accepted {
-	background: #1dbf73;
+	background: #1f8884;
 	color: #FFF;
 }
 
@@ -569,13 +569,13 @@ button:focus {
 }
 
 button.vbtn-default {
-	background: #1dbf73;
+	background: #1f8884;
 	color: #fff;
 	font-weight: 700;
 }
 
 button.vbtn-default:hover {
-	background: #19A463;
+	background: #1f8884;
 	color: #fff;
 }
 
@@ -598,12 +598,12 @@ button.vbtn-warning:hover {
 }
 
 button.vbtn-success {
-	background: #1dbf73;
+	background: #1f8884;
 	color: #fff;
 }
 
 button.vbtn-success:hover {
-	background: #1dbf73;
+	background: #1f8884;
 }
 
 button.vbtn-danger {
@@ -652,20 +652,20 @@ button.vbtn-light:hover {
 }
 
 .vbtn-outline-success {
-	color: #1dbf73;
-	border-color: #1dbf73;
+	color: #1f8884;
+	border-color: #1f8884;
 }
 
 .vbtn-outline-success:hover {
 	color: #ffffff;
-	border-color: #1dbf73;
-	background: #1dbf73;
+	border-color: #1f8884;
+	background: #1f8884;
 }
 
 a.vbtn-outline-success:hover {
 	color: #ffffff !important;
-	border-color: #1dbf73;
-	background: #1dbf73;
+	border-color: #1f8884;
+	background: #1f8884;
 }
 
 .btn-outline-secondary:hover {
@@ -849,8 +849,8 @@ ul.customlisting li {
 	}
 
 	.toggleSwitch input:checked~span:before {
-		border-color: #1dbf73;
-		box-shadow: inset 0 0 0 30px #1dbf73;
+		border-color: #1f8884;
+		box-shadow: inset 0 0 0 30px #1f8884;
 	}
 
 	.toggleSwitch input:checked~span span:first-of-type {
@@ -967,7 +967,7 @@ ul.customlisting li {
 
 .header_area .navbar-social li a:hover i,
 .header_area .navbar-social li span {
-	color: #1dbf73;
+	color: #1f8884;
 }
 
 .header_area .menu_nav {
@@ -1002,7 +1002,7 @@ ul.customlisting li {
 
 .header_area .navbar .nav .nav-item:hover .nav-link,
 .header_area .navbar .nav .nav-item.active .nav-link {
-	color: #1dbf73;
+	color: #1f8884;
 	opacity: 1;
 }
 
@@ -1245,7 +1245,7 @@ ul.customlisting li {
 		font-weight: 600;
 		max-height: 50px;
 		text-decoration: none;
-		background-color: #1dbf73!important;
+		background-color: #1f8884!important;
 		border: none;
 		color: #fff;
 		line-height: .9375rem;
@@ -1806,7 +1806,7 @@ ul.customlisting li {
 /*=================== custom button rule start ====================*/
 .button {
 	display: inline-block;
-	background-color: #1dbf73;
+	background-color: #1f8884;
 	color: #fff;
 	/*border-radius: 30px;*/
 	padding: .8rem 2.5rem;
@@ -1820,7 +1820,7 @@ ul.customlisting li {
 
 
 .button:hover {
-	background-color: #1dbf73;
+	background-color: #1f8884;
 	color: #fff;
 }
 
@@ -2016,7 +2016,7 @@ figure.effect-ming p a {
 }
 
 figure.effect-ming p a:hover {
-	color: #1dbf73;
+	color: #1f8884;
 }
 
 figure.effect-ming:hover h2 {
@@ -2115,7 +2115,7 @@ input.checkinout {
 input:focus,
 select:focus,
 textarea:focus {
-	outline: 1px solid #1dbf73;
+	outline: 1px solid #1f8884;
 }
 
 div.elem-group.inlined input {
@@ -2124,7 +2124,7 @@ div.elem-group.inlined input {
 }
 
 	.booking button {
-		background: #1dbf73;
+		background: #1f8884;
 		border: none;
 		color: white;
 		font-size: 1.5rem;
@@ -2138,7 +2138,7 @@ div.elem-group.inlined input {
 	}
 
 	.booking button:hover {
-		background: #1dbf73;
+		background: #1f8884;
 	}
 
 	/******************** Reccommended *******************/
@@ -2202,7 +2202,7 @@ div.elem-group.inlined input {
 	}
 
 	.buttonbg button {
-		background: #1dbf73;
+		background: #1f8884;
 		border: none;
 		color: #fff;
 		padding: .4rem 1rem .4rem 1rem;
@@ -2214,7 +2214,7 @@ div.elem-group.inlined input {
 	}
 
 	.buttonbg button:hover {
-		background: #1dbf73;
+		background: #1f8884;
 	}
 
 	.recommandedbg {
@@ -2244,7 +2244,7 @@ div.elem-group.inlined input {
 	}
 
 	.right_point h2 strong {
-		color: #1dbf73;
+		color: #1f8884;
 	}
 
 	.right_point h2 span {
@@ -2258,7 +2258,7 @@ div.elem-group.inlined input {
 	}
 
 	.left_point ul li i:hover {
-		color: #1dbf73;
+		color: #1f8884;
 	}
 
 	/*---------------*/
@@ -2613,8 +2613,8 @@ ul.tophd li {
 }
 
 .form-control:focus {
-	outline: 1px solid #1dbf73;
-	border: 1px solid #1dbf73;
+	outline: 1px solid #1f8884;
+	border: 1px solid #1f8884;
 }
 
 
@@ -2633,12 +2633,12 @@ input[type=number]:focus,
 [type=email].form-control:focus,
 [type=tel].form-control:focus,
 [contenteditable].form-control:focus {
-	outline: 1px solid #1dbf73;
+	outline: 1px solid #1f8884;
 }
 
 
 .dropdown-toggle::after {
-	color: #1dbf73 !important;
+	color: #1f8884 !important;
 }
 
 select.form-control:not([size]):not([multiple]) {
@@ -2678,7 +2678,7 @@ li.edit-verifications-list-item p {
 	}
 
 	.active-nav {
-		border-bottom: .3rem solid #1dbf73;
+		border-bottom: .3rem solid #1f8884;
 		font-weight: 700;
 	}
 
@@ -2697,7 +2697,7 @@ li.edit-verifications-list-item p {
 
 
 	.active-side {
-		background: #1dbf73;
+		background: #1f8884;
 		color: #fff;
 		text-align: center;
 		font-size: 1.6rem;
@@ -3332,11 +3332,11 @@ input[type=checkbox] {
 }
 
 .icon-beach {
-	color: #1dbf73;
+	color: #1f8884;
 }
 
 .rating_active {
-	color: #1dbf73;
+	color: #1f8884;
 }
 
 .rating {
@@ -3494,8 +3494,8 @@ input[type=checkbox] {
 .page-item.active .page-link {
 	z-index: 3;
 	color: #fff;
-	background-color: #1dbf73;
-	border-color: #1dbf73;
+	background-color: #1f8884;
+	border-color: #1f8884;
 	box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
 }
 
@@ -3504,7 +3504,7 @@ input[type=checkbox] {
 	position: relative;
     display: block;
     margin: 6px;
-    color: #1dbf73;
+    color: #1f8884;
     background-color: #fff;
     padding-left: 15px;
     padding-right: 15px;
@@ -3515,8 +3515,8 @@ input[type=checkbox] {
 .page-link:hover {
 	z-index: 3;
 	color: #fff !important;
-	background-color: #1dbf73;
-	border-color: #1dbf73;
+	background-color: #1f8884;
+	border-color: #1f8884;
 
 	box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
 	-webkit-transform: translateY(-0.25em);
@@ -3525,9 +3525,9 @@ input[type=checkbox] {
 
 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
-	background: #1dbf73!important;
+	background: #1f8884!important;
 	color: #fff!important;
-	background-color: #1dbf73!important;
+	background-color: #1f8884!important;
 	border: 1px solid #dee2e6!important;
 }
 
@@ -3551,13 +3551,13 @@ input[type=checkbox] {
 	cursor: pointer;
 	cursor: hand;
 
-	color: #1dbf73 !important;
+	color: #1f8884 !important;
 	border: 1px solid #dee2e6!important;
 	margin: .5rem;
 }
 
 .current {
-	background: #1dbf73 !important;
+	background: #1f8884 !important;
     color: #fff!important;
 }
 
@@ -3622,7 +3622,7 @@ input[type=checkbox] {
 	font-size: 170px;
 	font-weight: 900;
 	margin: 0px;
-	color: #1dbf73;
+	color: #1f8884;
 	text-transform: uppercase;
 	margin-left: 0;
 }
@@ -3730,7 +3730,7 @@ input[type=checkbox] {
 	height: 100%;
 	width: 100%;
 	padding: 10px;
-	color: #1dbf73;
+	color: #1f8884;
 	box-sizing: border-box;
 	border-bottom: 1px solid #fff;
 	border-top: 1px solid rgba(255, 255, 255, .1);
@@ -3765,24 +3765,24 @@ input[type=checkbox] {
 	cursor: pointer !important;
 }
 .ranges-time li:hover {
-	background: #1dbf73 !important;
+	background: #1f8884 !important;
 	color: #fff !important;
 }
 
 .ranges li:hover {
-	background: #1dbf73 !important;
+	background: #1f8884 !important;
 	color: #fff !important;
 }
 
 .ranges li.active {
-	background: #1dbf73 !important;
-	border: 1px solid #1dbf73 !important;
+	background: #1f8884 !important;
+	border: 1px solid #1f8884 !important;
 	color: #fff !important;
 }
 
 .ranges-time li.active {
-	background: #1dbf73 !important;
-	border: 1px solid #1dbf73 !important;
+	background: #1f8884 !important;
+	border: 1px solid #1f8884 !important;
 	color: #fff !important;
 }
 
@@ -3794,7 +3794,7 @@ input[type=checkbox] {
 }
 
 .nav-item>.active {
-	color: #1dbf73;
+	color: #1f8884;
 	font-weight: 700;
 }
 
@@ -4515,8 +4515,8 @@ a.send-btn {
 }
 
 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
-    border: 1px solid #1dbf73!important;
-    background: #1dbf73!important;
+    border: 1px solid #1f8884!important;
+    background: #1f8884!important;
     font-weight: normal;
     color: #fff;
 }

@@ -193,16 +193,18 @@
 
           <div class="col-md-12">
             <label for="listing_cleaning_fee_native_checkbox" class="label-large label-inline">
-              <input type="checkbox" class="pricing_checkbox" data-rel="text-price" {{($result->property_price->original_guest_fee == 0)?'':'checked="checked"'}}>&nbsp
+              <input type="checkbox" class="pricing_checkbox" data-rel="text-price" {{($result->property_price->price_text == 0)?'':'checked="checked"'}}>&nbsp
               {{trans('messages.listing_price.tax_price')}}
             </label>
           </div>
-          <div id="text-price" class="display-off">
+          @php
+          @endphp
+          <div id="text-price" class="{{($result->property_price->price_text== 0)?'display-off':''}}">
             <div class="col-md-12">
               <div class="col-md-3 l-pad-none">
                 <div class="input-addon">
                   <span class="input-prefix pay-currency">{!! $result->property_price->currency->org_symbol !!}</span>
-                  <input type="text" data-extras="true" value="" id="price-extra_person" name="text_price" class="money-input" data-saving="additional-saving">
+                  <input type="text" data-extras="true" value="{{$result->property_price->price_text}}" id="price-extra_person" name="price_text" class="money-input" data-saving="additional-saving">
                 </div>
               </div>
              

@@ -382,6 +382,7 @@ class PropertyController extends Controller
                     $property_price->cleaning_fee      = $request->cleaning_fee;
                     $property_price->guest_fee         = $request->guest_fee;
                     $property_price->additional_price  = $request->additional_price;
+                    $property_price->price_text        = $request->price_text;
                     $property_price->guest_after       = $request->guest_after;
                     $property_price->security_fee      = $request->security_fee;
                     $property_price->weekend_price     = $request->weekend_price;
