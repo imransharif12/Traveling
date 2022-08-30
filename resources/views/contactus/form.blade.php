@@ -88,6 +88,7 @@
                 if (data.code == 200) {
                     $("#contact_form")[0].reset();
                     $('.alert-success').removeClass('d-none');
+					grecaptcha.reset();
                 }
             }
         });
