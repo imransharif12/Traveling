@@ -138,12 +138,22 @@
 @stop
 
 @push('scripts')
-   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
+   
 	<script type="text/javascript" src="{{ url('js/jquery.validate.min.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('js/intl-tel-input-13.0.0/build/js/intlTelInput.js')}}"></script>
 	<script type="text/javascript" src="{{ asset('js/isValidPhoneNumber.js') }}" type="text/javascript"></script>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	<script type="text/javascript">
+	$('#btn').on('click', function (evt) {
+        var response = grecaptcha.getResponse();
+        if (response.length == 0) {
+            //reCaptcha not verified
+            alert("Please verify you are human");
+            return false;
+			evt.preventDefault()
+
+        }
+    });
 		$('select').on('change', function() {
 			var dobError = '';
 			var day = document.getElementById("user_birthday_day").value;
