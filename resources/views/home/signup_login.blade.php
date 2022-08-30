@@ -111,7 +111,8 @@
 									</select>
 									</div>
 									<div style="margin-left: -33px;margin-top:10px">
-                                <div style="transform: scale(0.77);" class="g-recaptcha" data-sitekey="{{config('global.SITEKEY')}}"></div>
+                                <div style="transform: scale(0.77);" class="g-recaptcha" data-sitekey="{{config('global.SITEKEY')}}">
+							</div>
                             </div>
 
 								</div>
