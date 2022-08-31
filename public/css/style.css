@@ -1167,14 +1167,13 @@ ul.customlisting li {
 		width: 95px;
         height: 84px
 	}
-
 	.Homeowner_homeownerSection__sV1dE {
 		background-color: #ddf4f7;
-		background-image: url(https://evolve.com/assets/images/homepage-homeowner.svg);
-		/* background-image: url(/assets/images/homepage-homeowner.svg); */
-		background-position: 95% calc(100% + 0.25rem);
+		/* background-image: url(https://evolve.com/assets/images/homepage-homeowner.svg); */
+		background-image: url(http://searchastay.com/Searchastay/public/public/homepage-homeowner.jpg);
+		background-position: 87% calc(100% + 0.25rem);
 		background-repeat: no-repeat;
-		background-size: 800px;
+		background-size: 1550px;
 	}
 	.Homeowner_homeownerContent__Ssk2l {
 		padding: 100px;

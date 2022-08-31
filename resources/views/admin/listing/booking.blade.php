@@ -27,7 +27,7 @@
                   <h3>{{trans('messages.listing_book.booking_title')}}</h3>
                   <p class="text-muted">{{trans('messages.listing_book.booking_data')}}.</p>
                   </div>
-              <div class="row">
+              <div class="col-md-12">
                 <div class="col-md-8">
                   <div class="col-md-12 min-height-div">
                     <label class="label-large">{{trans('messages.listing_book.booking_type')}}  <span class="text-danger">*</span></label>
@@ -35,7 +35,9 @@
                         <option value="request" {{ ($result->booking_type == 'request') ? 'selected' : '' }}>{{trans('messages.listing_book.review_request')}}</option>
                         <option value="instant" {{ ($result->booking_type == 'instant') ? 'selected' : '' }}>{{trans('messages.listing_book.guest_instant')}}</option>
                     </select>
-
+                    <div style="margin-top:20px">
+                        <div style="transform: scale(0.99);" class="g-recaptcha" data-sitekey="{{config('global.SITEKEY')}}">
+							      </div>   
                   </div>
 
                   
@@ -49,7 +51,7 @@
                   <a data-prevent-default="" href="{{ url('admin/listing/'.$result->id.'/pricing') }}" class="btn btn-large btn-primary">{{trans('messages.listing_description.back')}}</a>
                 </div>
                 <div class="col-md-2 col-sm-6 col-xs-6 text-right">
-                  <button type="submit" class="btn btn-large btn-primary next-section-button">Complete
+                  <button id="complete" type="submit" class="btn btn-large btn-primary next-section-button">Complete
                   </button>
                 </div>
               </div>
@@ -60,5 +62,25 @@
       </div>
       </section>
   </div>
-  
+
+	
+
 @stop
+
+@push('scripts')
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+  <script>
+    $('#complete').on('click', function (evt) {
+      console.log("dsf");
+        var response = grecaptcha.getResponse();
+        if (response.length == 0) {
+            //reCaptcha not verified
+            alert("Please verify you are human");
+            return false;
+			evt.preventDefault()
+
+        }
+    });
+  </script>
+@endpush

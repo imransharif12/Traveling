@@ -12,7 +12,7 @@
         .btn-outline-danger:hover {
             background: #dc3545 !important;
         }
-		
+		section-label-sm blue
 	
     </style>
 @endpush
@@ -274,14 +274,11 @@
 	@endif
 	<div class="Homeowner_homeownerSection__sV1dE section" id="homeowner">
 		<div class="Homeowner_homeownerContent__Ssk2l">
-			<span class="section-label-sm blue">Become an Evolve Owner</span>
-			<div><h2 class="section-title-sm">Launch Your Vacation Rental Business with Evolve</h2></div>
+			<span class="section-label-sm blue">Become A Searchastay Owner</span>
+			<div><h2 class="section-title-sm">Launch Your Vacation Rental Business with Searchastay</h2></div>
 			<div class="Homeowner_homeownerSubTitle__glMRN">
 			<span class="Homeowner_subtitle__x1ME2 section-subtitle-sm">
-				Become an Evolve owner and we’ll 
-				handle the hard parts of managing your property (like marketing, 
-				filling your calendar, and supporting your guests). 
-				We do it all for an industry-low management fee of just 10%.</span>
+				we’ll handle the hard parts of managing your property (like marketing, filling your calendar, and supporting your guests). We do it all for an industry-low management fee of just 5%.</span>
 			</div><a id="homepage_become_homeowner" class="Homeowner_homeownerBtn__B7Ruf btn-primary btn-cta" title="Learn More" target=”_blank” href="https://va4vr.com/">Learn More</a></div></div>
 @stop
 
