@@ -35,9 +35,6 @@
                         <option value="request" {{ ($result->booking_type == 'request') ? 'selected' : '' }}>{{trans('messages.listing_book.review_request')}}</option>
                         <option value="instant" {{ ($result->booking_type == 'instant') ? 'selected' : '' }}>{{trans('messages.listing_book.guest_instant')}}</option>
                     </select>
-                    <div style="margin-top:10px">
-                        <div style="transform: scale(0.99);" class="g-recaptcha" data-sitekey="{{config('global.SITEKEY')}}">
-							      </div>   
 
                   </div>
 
@@ -63,6 +60,5 @@
       </div>
       </section>
   </div>
-	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
+  
 @stop
