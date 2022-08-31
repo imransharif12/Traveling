@@ -270,6 +270,7 @@ class UserController extends Controller
                 }
 
             }
+            return redirect('dashboard');
         }
         return view('users.media', $data);
     }
