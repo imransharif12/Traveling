@@ -51,7 +51,7 @@
                   <a data-prevent-default="" href="{{ url('admin/listing/'.$result->id.'/pricing') }}" class="btn btn-large btn-primary">{{trans('messages.listing_description.back')}}</a>
                 </div>
                 <div class="col-md-2 col-sm-6 col-xs-6 text-right">
-                  <button id="btn" type="submit" class="btn btn-large btn-primary next-section-button">Complete
+                  <button id="complete" type="submit" class="btn btn-large btn-primary next-section-button">Complete
                   </button>
                 </div>
               </div>
@@ -62,10 +62,17 @@
       </div>
       </section>
   </div>
-	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+	
+
+@stop
+
+@push('scripts')
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
   <script>
-    $('#btn').on('click', function (evt) {
+    $('#complete').on('click', function (evt) {
+      console.log("dsf");
         var response = grecaptcha.getResponse();
         if (response.length == 0) {
             //reCaptcha not verified
@@ -76,5 +83,4 @@
         }
     });
   </script>
-
-@stop
+@endpush
