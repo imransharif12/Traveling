@@ -40,7 +40,7 @@ class Admin extends Model implements AuthenticatableContract, CanResetPasswordCo
         if ($this->attributes['profile_image'] == '') {
             $src = url('images/user_pic.jpg');
         } else {
-            $src = url('public/images/profile/'.$this->attributes['id'].'/'.$this->attributes['profile_image']);
+            $src = url('images/profile/'.$this->attributes['id'].'/'.$this->attributes['profile_image']);
         }
 
         return $src;
