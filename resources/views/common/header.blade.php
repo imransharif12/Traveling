@@ -40,7 +40,7 @@
                             <div class="d-flex">
                                 <div>
                                     <div class="nav-item mr-0">
-                                    <img src="{{Auth::user()->profile_src}}" class="head_avatar" alt="{{Auth::user()->first_name}}">
+                                    <img src="{{  url('public/images/profile').'/'.Auth::user()->id.'/'.$result->profile_image }}" class="head_avatar" alt="{{Auth::user()->first_name}}">
                                 </div>
                                 </div>
                                 <div>

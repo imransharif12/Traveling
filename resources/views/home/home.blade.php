@@ -274,7 +274,7 @@
 	@endif
 	<div class="Homeowner_homeownerSection__sV1dE section" id="homeowner">
 		<div class="Homeowner_homeownerContent__Ssk2l">
-			<span class="section-label-sm blue">Become A Searchastay Owner</span>
+			<span style="color:#1f8884!important" class="section-label-sm blue">Become A Searchastay Owner</span>
 			<div><h2 class="section-title-sm">Launch Your Vacation Rental Business with Searchastay</h2></div>
 			<div class="Homeowner_homeownerSubTitle__glMRN">
 			<span class="Homeowner_subtitle__x1ME2 section-subtitle-sm">

@@ -1,7 +1,7 @@
 @extends('emails.template')
 
 @section('emails.main')
-  <h3 style="text-align:center;font-weight: bold;">{{ $site_name }}</h3>
+  <img src="{{asset('front/images/logos/logo.jpg')}}"  alt="logo" style="width: 80px;height: 80px;">
   <p>Hi {{ $first_name }},</p>
   <h1>
     Respond to {{ $result['users']['first_name'] }}’s Inquiry
