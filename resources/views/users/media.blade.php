@@ -27,7 +27,7 @@
                             <div class="col-md-3">
                                 @if($result->profile_image)
 
-                                    <img width="200" height="200" title="{{ Auth::user()->first_name }}" src="{{  url('images/profile').'/'.Auth::user()->id.'/'.$result->profile_image }}" alt="{{ $result->first_name }}">
+                                    <img width="200" height="200" title="{{ Auth::user()->first_name }}" src="{{  url('public/images/profile').'/'.Auth::user()->id.'/'.$result->profile_image }}" alt="{{ $result->first_name }}">
                                 @else
                                     <img width="225" height="225" title="{{ Auth::user()->first_name }}" src="{{  \Auth::user()->profile_src }}" alt="{{ $result->first_name }}">
                                 @endif
