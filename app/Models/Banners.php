@@ -28,6 +28,6 @@ class Banners extends Model
 
     public function getImageUrlAttribute()
     {
-        return url('/').'/front/images/banners/'.$this->attributes['image'];
+        return url('/').'/public/front/images/banners/'.$this->attributes['image'];
     }
 }
