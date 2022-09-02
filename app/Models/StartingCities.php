@@ -40,6 +40,6 @@ class StartingCities extends Model
 
     public function getImageUrlAttribute()
     {
-        return url('/').'/front/images/starting_cities/'.$this->attributes['image'];
+        return url('/').'public/front/images/starting_cities/'.$this->attributes['image'];
     }
 }
