@@ -1,7 +1,7 @@
 @extends('emails.template')
 
 @section('emails.main')
-  <img src="{{asset('front/images/logos/logo.jpg')}}"  alt="logo" style="width: 80px;height: 80px;">
+  <img src="{{URL::asset('front/images/logos/logo.png')}}"  alt="logo" style="width: 80px;height: 80px;">
   <p>Hi {{ $first_name }},</p>
   <h1>
     Respond to {{ $result['users']['first_name'] }}’s Inquiry
