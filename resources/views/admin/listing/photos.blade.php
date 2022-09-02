@@ -37,7 +37,7 @@
                                                             class="text-center text-success">{{ session('success') }}</span>
                                                     @endif
                                                     <input class="form-control text-16" name="file[]" id="photo_file"
-                                                           type="file" value="" accept="image/png, image/bmp, image/jpeg" multiple="">
+                                                           type="file" value="" accept=".jpg,.jpeg,.png" multiple="">
                                                     <input type="hidden" id="photo" type="text" name="photos">
                                                     <input type="hidden" name="img_name" id="img_name">
                                                     <input type="hidden" name="crop" id="type" value="crop">

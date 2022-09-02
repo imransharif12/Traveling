@@ -342,7 +342,8 @@ class PropertiesController extends Controller
                         foreach ($files as $file) {
                             $ext=$file->getClientOriginalExtension();
                             // dd($ext);
-                            $name=$file->getClientOriginalName();
+                            $name = rand(1, 50) . "_" . $file->getClientOriginalName();
+                            $name  =   preg_replace('/\s+/', '_',  $name);
                             $image = time() . '_' . $name;
                             if ($ext == 'png' || $ext == 'jpg' || $ext == 'jpeg' || $ext == 'gif' || $ext == 'JPG') {
                                 $uploaded = $file->move($path,$image);
