@@ -230,7 +230,7 @@ class SetDataServiceProvider extends ServiceProvider
 
         if ( !empty($banner) && file_exists(public_path('front/images/logos/'. $general['logo'])) )
         {
-            $banner_image = url('front/images/banners/'.$banner->image);
+            $banner_image = url('public/front/images/banners/'.$banner->image);
         } else {
             $banner_image = url('images/default-banner.jpg');
         }

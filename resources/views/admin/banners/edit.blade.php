@@ -9,7 +9,7 @@ $form_data = [
     'fields' => [
         ['type' => 'text', 'class' => '', 'label' => 'Heading', 'name' => 'heading', 'value' => $result->heading],
         ['type' => 'text', 'class' => '', 'label' => 'Subheading', 'name' => 'subheading', 'value' => $result->subheading],
-        ['type' => 'file', 'class' => '', 'label' => 'Image', 'name' => "image", 'value' => '', 'image' => url('front/images/banners/'.$result['image']), 'hint'=>'(Width:1920px and Height:860px)'],
+        ['type' => 'file', 'class' => '', 'label' => 'Image', 'name' => "image", 'value' => '', 'image' => url('public/front/images/banners/'.$result['image']), 'hint'=>'(Width:1920px and Height:860px)'],
         ['type' => 'select', 'options' => ['Active' => 'Active', 'Inactive' => 'Inactive'], 'class' => 'validate_field', 'label' => 'Status', 'name' => 'status', 'value' => $result->status]
     ]
 ];
