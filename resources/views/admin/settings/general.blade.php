@@ -1,18 +1,18 @@
 @php
 if($result['logo']==null)
 {
-    $logoPath = "public/front/images/default-error-image.png";
+    $logoPath = "front/images/default-error-image.png";
 }
 else {
-    $logoPath = 'public/front/images/logos/'.$result['logo'];
+    $logoPath = 'front/images/logos/'.$result['logo'];
 }
 
 if($result['favicon']==null)
 {
-    $faviconPath = "public/front/images/default-error-image.png";
+    $faviconPath = "front/images/default-error-image.png";
 }
 else {
-    $faviconPath = 'public/front/images/logos/'.$result['favicon'];
+    $faviconPath = 'front/images/logos/'.$result['favicon'];
 }
 $form_data = [
 		'page_title'=> 'General Setting Form',
