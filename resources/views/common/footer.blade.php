@@ -67,6 +67,7 @@
                             @if(isset($join_us))
                                 @for($i=0; $i<count($join_us); $i++)
                                     @if ($join_us[$i]->value <> '#')
+                                    
                                         <li class="list-inline-item">
                                             <a class="social-icon  text-color text-18" target="_blank" href="{{ $join_us[$i]->value }}" aria-label="{{$join_us[$i]->name}}"><i class="fab fa-{{ str_replace('_','-',$join_us[$i]->name) }}"></i></a>
                                         </li>

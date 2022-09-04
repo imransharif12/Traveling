@@ -858,7 +858,7 @@
                             }
 
                             if(room_div != '') $('#properties_show').html(room_div);
-                            else $('#properties_show').html(' <div class="text-center justify-content-center w-100 position-center"><img src="{{ url('public/img/not-found.png')}}" class="img-fluid not-found" alt="not-found"><h4 class="text-center text-20 font-weight-700">{{trans('messages.search.no_result_found')}}</h4></div>');
+                            else $('#properties_show').html(' <div class="text-center justify-content-center w-100 position-center"><img src="{{ url('img/not-found.png')}}" class="img-fluid not-found" alt="not-found"><h4 class="text-center text-20 font-weight-700">{{trans('messages.search.no_result_found')}}</h4></div>');
 
                             //deleteMarkers();
                             addMarker(map, room_point);
