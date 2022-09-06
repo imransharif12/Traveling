@@ -346,7 +346,11 @@ class PropertiesController extends Controller
                             $name  =   preg_replace('/\s+/', '_',  $name);
                             $image = time() . '_' . $name;
                             if ($ext == 'png' || $ext == 'jpg' || $ext == 'jpeg' || $ext == 'gif' || $ext == 'JPG') {
-                                $uploaded = $file->move($path,$image);
+                                $uploaded = \Image::make($file->getRealPath());
+                                $uploaded->resize(560, 560, function ($constraint) {
+                                    $constraint->aspectRatio();
+                                })->save($path.'/'.$image);
+                                // $uploaded = $file->move($path,$image);
                                 // $uploaded = move_uploaded_file($tmp_name, $path . "/" . $image);
                             }
                             $imageArray[] = $image;

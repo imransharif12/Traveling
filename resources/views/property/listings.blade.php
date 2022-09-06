@@ -149,7 +149,7 @@
                         @empty
                             <div class="row jutify-content-center position-center w-100 p-4 mt-4">
                                 <div class="text-center w-100">
-                                    <img src="{{ url('public/img/unnamed.png')}}" class="img-fluid"   alt="Not Found">
+                                    <img src="{{ url('img/unnamed.png')}}" class="img-fluid"   alt="Not Found">
                                     <p class="text-center">{{trans('messages.message.empty_listing')}}</p>
                                 </div>
                             </div>

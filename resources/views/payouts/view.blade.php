@@ -102,7 +102,7 @@
 					@else
 						<div class="row jutify-content-center w-100 p-4 mt-4">
 							<div class="text-center w-100">
-								<img src="{{ url('public/img/unnamed.png')}}"   alt="notfound" class="img-fluid">
+								<img src="{{ url('img/unnamed.png')}}"   alt="notfound" class="img-fluid">
 								<p class="text-center">{{trans('messages.message.no_payout_settings')}}</p>
 							</div>
 						</div>

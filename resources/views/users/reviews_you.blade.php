@@ -82,7 +82,7 @@
                                         @empty
                                             <div class="row jutify-content-center w-100 p-4 mt-4">
                                                 <div class="text-center w-100">
-                                                    <img src="{{ url('public/img/unnamed.png')}}" class="img-fluid"  alt="notfound">
+                                                    <img src="{{ url('img/unnamed.png')}}" class="img-fluid"  alt="notfound">
                                                     <p class="text-center">{{ trans('messages.reviews.nobody_to_review') }}</p>
                                                 </div>
                                             </div>
@@ -155,7 +155,7 @@
                                         @empty
                                         <div class="row jutify-content-center  w-100 p-4 mt-4">
                                             <div class="text-center w-100">
-                                                <img src="{{ url('public/img/unnamed.png')}}" class="img-fluid"  alt="notfound">
+                                                <img src="{{ url('img/unnamed.png')}}" class="img-fluid"  alt="notfound">
                                                 <p class="text-center">{{ trans('messages.reviews.nobody_to_review') }}</p>
                                             </div>
                                         </div> 
@@ -236,7 +236,7 @@
                                         @empty
                                             <div class="row jutify-content-center w-100 p-4 mt-4">
                                                 <div class="text-center w-100">
-                                                    <img src="{{ url('public/img/unnamed.png')}}" class="img-fluid"  alt="notfound">
+                                                    <img src="{{ url('img/unnamed.png')}}" class="img-fluid"  alt="notfound">
                                                     <p class="text-center">{{ trans('messages.reviews.nobody_to_review') }}</p>
                                                 </div>
                                             </div> 
