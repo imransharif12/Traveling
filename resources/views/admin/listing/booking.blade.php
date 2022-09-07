@@ -72,13 +72,12 @@
 
   <script>
     $('#complete').on('click', function (evt) {
-      console.log("dsf");
         var response = grecaptcha.getResponse();
         if (response.length == 0) {
             //reCaptcha not verified
             alert("Please verify you are human");
             return false;
-			evt.preventDefault()
+			      evt.preventDefault()
 
         }
     });

@@ -191,7 +191,7 @@
             </div>
           </div>
 
-          <div class="col-md-12">
+          <!-- <div class="col-md-12">
             <label for="listing_cleaning_fee_native_checkbox" class="label-large label-inline">
               <input type="checkbox" class="pricing_checkbox" data-rel="text-price" {{($result->property_price->price_text == 0)?'':'checked="checked"'}}>&nbsp
               {{trans('messages.listing_price.tax_price')}}
@@ -209,7 +209,7 @@
               </div>
              
             </div>
-          </div>
+          </div> -->
          
         </div>
         <div class="row">

@@ -223,7 +223,7 @@
 					<div class="col-md-6 d-none" id="email_id">
 						<div class="form-group">
 							<label for="exampleInputPassword1">{{trans('messages.account_preference.paypal_email_id')}}<span class="text-danger">*</span></label>
-							<input type="email" class="form-control" name="email"  value="" required="">
+							<input type="email" class="form-control" name="email"  value="">
 							@if ($errors->has('email'))
 							<p class="error-tag">{{ $errors->first('email') }}</p>
 							@endif

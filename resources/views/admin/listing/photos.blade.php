@@ -36,7 +36,7 @@
                                                 <span class="text-center text-success">{{ session('success') }}</span>
                                                 @endif
                                                 <input class="form-control text-16" name="file[]" id="photo_file"
-                                                    type="file" value="" onchange="validateFileType()" multiple="">
+                                                    type="file" value=""  multiple="">
                                                 <input type="hidden" id="photo" type="text" name="photos">
                                                 <input type="hidden" name="img_name" id="img_name">
                                                 <input type="hidden" name="crop" id="type" value="crop">
@@ -427,17 +427,31 @@
 <script src="{{ asset('backend/js/additional-method.min.js') }}"></script>
 
 <script type="text/javascript">
-    function validateFileType() {
-        var fileName = document.getElementById("photo_file").value;
-        var idxDot = fileName.lastIndexOf(".") + 1;
-        var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
-        if (extFile == "jpg" || extFile == "jpeg" || extFile == "png") {
-            //TO DO
-        } else {
+    var myInput = document.getElementById('photo_file');
+    myInput.onchange = _ => {
+    for (var i = 0; i < myInput.files.length; i++) {
+        var file = myInput.files[i];
+        const fileSize = file.size / 1024 / 1024;
+        const extFile = file.name.substring(file.name.length - 3);
+        if(myInput.files.length>24){
+            alert("Only 25 images are allowed!");
+            $('#photo_file').val('');
+            return ;
+        }
+        if (extFile != "jpg" && extFile != "jpeg" && extFile != "png") {
             alert("Only jpg/jpeg and png files are allowed!");
             $('#photo_file').val('');
+            return ;
+        }
+        if (fileSize > 2) {
+            alert('File size exceeds 2 MiB');
+            $('#photo_file').val('');
+            return ;
+
         }
     }
+};
+   
 
 </script>
 <script type="text/javascript">
