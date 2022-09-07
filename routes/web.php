@@ -169,6 +169,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['gue
 		Route::match(array('GET', 'POST'), 'settings', 'SettingsController@general')->middleware(['permission:general_setting']);
 		//Contact Us
 		Route::match(array('GET', 'POST'), 'contact', 'ContactUsController@index')->middleware(['permission:general_setting']);
+		Route::get('delete-contact/{id}', 'ContactUsController@delete');
+
 
 
 		Route::match(array('GET', 'POST'), 'settings/preferences', 'SettingsController@preferences')->middleware(['permission:preference']);

@@ -30,9 +30,8 @@ class ContactUsDataTable extends DataTable
         return datatables()
             ->of($admin)
             ->addColumn('action', function ($admin) {
-                $edit = '<a href="' . url('admin/edit-admin/' . $admin->id) . '" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i></a>&nbsp;';
-                $delete = '<a href="' . url('admin/delete-admin/' . $admin->id) . '" class="btn btn-xs btn-danger delete-warning"><i class="glyphicon glyphicon-trash"></i></a>';
-                return $edit . $delete;
+                $delete = '<a href="' . url('admin/delete-contact/' . $admin->id) . '" class="btn btn-xs btn-danger delete-warning"><i class="glyphicon glyphicon-trash"></i></a>';
+                return  $delete;
             })
             ->addColumn('username', function ($admin) {
                 return '<a href="' . url('admin/edit-admin/' . $admin->id) . '">' . $admin->username . '</a>';
@@ -53,6 +52,7 @@ class ContactUsDataTable extends DataTable
             ->addColumn(['data' => 'name', 'name' => 'contact_us.name', 'title' => 'Name'])
             ->addColumn(['data' => 'email', 'name' => 'contact_us.email', 'title' => 'Email'])
             ->addColumn(['data' => 'message', 'name' => 'contact_us.message', 'title' => 'Message'])
+            ->addColumn(['data' => 'action', 'name' =>'action', 'title' => 'Action', 'orderable' => false, 'searchable' => false])
             ->parameters(dataTableOptions());
     }
 

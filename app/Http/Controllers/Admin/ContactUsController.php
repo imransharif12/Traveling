@@ -6,9 +6,14 @@ use Illuminate\Http\Request;
 use App\Models\{ContactUs};
 use App\Http\Controllers\Controller;
 use App\DataTables\ContactUsDataTable;
-
+use App\Http\Helpers\Common;
 class ContactUsController extends Controller
 {
+    protected $helper;
+    public function __construct()
+    {
+        $this->helper = new Common;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -85,5 +90,12 @@ class ContactUsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function delete(Request $request)
+    {
+        ContactUs::where(['id'=>$request->id])->delete();
+        $this->helper->one_time_message('success', 'Deleted Successfully');
+        return redirect('admin/contact');
     }
 }
