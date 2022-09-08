@@ -434,12 +434,12 @@
         const fileSize = file.size / 1024 / 1024;
         const extFile = file.name.substring(file.name.length - 3);
         if(myInput.files.length>24){
-            alert("Only 25 images are allowed!");
+            alert("Please upload Image one by one, max 20 images , jpeg, jpg only.");
             $('#photo_file').val('');
             return ;
         }
         if (extFile != "jpg" && extFile != "jpeg" && extFile != "png") {
-            alert("Only jpg/jpeg and png files are allowed!");
+            alert("Please upload Image one by one, max 20 images , jpeg, jpg only.");
             $('#photo_file').val('');
             return ;
         }

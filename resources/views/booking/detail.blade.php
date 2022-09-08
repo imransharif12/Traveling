@@ -274,7 +274,7 @@
 									</div>
 
 									<div class="col-sm-11 p-0 text-16 text-justify">
-										<label class="label-inline" for="tos_confirm">{{ trans('messages.booking_detail.check_box_agree') }} <br><a href="{{ url('/') }}/host_guarantee" target="_blank" class="font-weight-700">{{ trans('messages.booking_detail.guarantee_term_condition') }}</a> <br><a href="{{ url('/') }}/guest_refund" target="_blank" class="font-weight-700">{{ trans('messages.booking_detail.refund_policy_term') }}</a>, {{ trans('messages.booking_detail.and') }} and <a href="{{ url('/') }}/terms_of_service" target="_blank" class="font-weight-700">{{ trans('messages.booking_detail.term_of_service') }}</a>.</label>
+										<label class="label-inline" for="tos_confirm">{{ trans('messages.booking_detail.check_box_agree') }} <br><a href="{{ url('/') }}/terms-conditions" target="_blank" class="font-weight-700">{{ trans('messages.booking_detail.guarantee_term_condition') }}</a> <br><a href="{{ url('/') }}/privacy-policy" target="_blank" class="font-weight-700">{{ trans('messages.booking_detail.refund_policy_term') }}</a>, {{ trans('messages.booking_detail.and') }} and <a href="javascript:;" class="font-weight-700">{{ trans('messages.booking_detail.term_of_service') }}</a>.</label>
 									</div>
 								</div>
 							</div>
