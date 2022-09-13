@@ -219,19 +219,19 @@ class SearchController extends Controller
             'property_price',
             'users'
         ])
-            ->whereHas('property_address', function ($query) use ($findaddress) {
-                foreach ($findaddress as $key => $term){
-                    //if first loop, use Where, if multiple then add orWhere to current query
-                    if($key == 0)
-                      $query = $query->where('address_line_1', 'like', "%{$term}%");
-                    else
-                      $query = $query->orWhere('address_line_1', 'like', "%{$term}%");
-                  }
-                  return $query;
-            })
-            // ->whereHas('property_address', function ($query) use ($minLat, $maxLat, $minLong, $maxLong) {
-            //     $query->whereRaw("latitude between $minLat and $maxLat and longitude between $minLong and $maxLong");
+            // ->whereHas('property_address', function ($query) use ($findaddress) {
+            //     foreach ($findaddress as $key => $term){
+            //         //if first loop, use Where, if multiple then add orWhere to current query
+            //         if($key == 0)
+            //           $query = $query->where('address_line_1', 'like', "%{$term}%");
+            //         else
+            //           $query = $query->orWhere('address_line_1', 'like', "%{$term}%");
+            //       }
+            //       return $query;
             // })
+            ->whereHas('property_address', function ($query) use ($minLat, $maxLat, $minLong, $maxLong) {
+                $query->whereRaw("latitude between $minLat and $maxLat and longitude between $minLong and $maxLong");
+            })
             ->whereHas('property_price', function ($query) use ($min_price, $max_price, $currency_rate) {
                 $query->join('currency', 'currency.code', '=', 'property_price.currency_code');
                 $query->whereRaw('((price / currency.rate) * ' . $currency_rate . ') >= ' . $min_price . ' and ((price / currency.rate) * ' . $currency_rate . ') <= ' . $max_price);
