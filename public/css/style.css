@@ -2425,7 +2425,7 @@ div.elem-group.inlined input {
 
 	.testimonialbg {
 		margin: -.5rem 0 -.5rem 0;
-		background: url(../img/testimonial_bg.png) fixed center center;
+		/* background: url(../img/testimonial_bg.png) fixed center center; */
 		background-size: cover;
 	}
 

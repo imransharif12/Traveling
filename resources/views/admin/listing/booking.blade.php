@@ -68,7 +68,7 @@
 @stop
 
 @push('scripts')
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
   <script>
     $('#complete').on('click', function (evt) {
@@ -81,5 +81,5 @@
 
         }
     });
-  </script>
+  </script> -->
 @endpush

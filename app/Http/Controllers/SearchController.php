@@ -32,8 +32,6 @@ class SearchController extends Controller
     {
         $location = $request->input('location');
         $address = str_replace(" ", "+", "$location");
-
-
         $map_where = 'https://maps.google.com/maps/api/geocode/json?key=' . MAP_KEY . '&address=' . $address . '&sensor=false';
         $geocode = $this->content_read($map_where);
         $json = json_decode($geocode);
@@ -45,6 +43,7 @@ class SearchController extends Controller
             $data['lat'] = 0;
             $data['long'] = 0;
         }
+        
 
         $data['location'] = $request->input('location');
         $data['checkin'] = $request->input('checkin');
@@ -213,14 +212,26 @@ class SearchController extends Controller
             ->firstWhere('code', \Session::get('currency'))
             ->rate;
 
+            $findaddress = $this->multiexplode(array(" ",",",".","|",":","-"),$full_address);
+            // dd($findstring);
         $properties = Properties::with([
             'property_address',
             'property_price',
             'users'
         ])
-            ->whereHas('property_address', function ($query) use ($minLat, $maxLat, $minLong, $maxLong) {
-                $query->whereRaw("latitude between $minLat and $maxLat and longitude between $minLong and $maxLong");
+            ->whereHas('property_address', function ($query) use ($findaddress) {
+                foreach ($findaddress as $key => $term){
+                    //if first loop, use Where, if multiple then add orWhere to current query
+                    if($key == 0)
+                      $query = $query->where('address_line_1', 'like', "%{$term}%");
+                    else
+                      $query = $query->orWhere('address_line_1', 'like', "%{$term}%");
+                  }
+                  return $query;
             })
+            // ->whereHas('property_address', function ($query) use ($minLat, $maxLat, $minLong, $maxLong) {
+            //     $query->whereRaw("latitude between $minLat and $maxLat and longitude between $minLong and $maxLong");
+            // })
             ->whereHas('property_price', function ($query) use ($min_price, $max_price, $currency_rate) {
                 $query->join('currency', 'currency.code', '=', 'property_price.currency_code');
                 $query->whereRaw('((price / currency.rate) * ' . $currency_rate . ') >= ' . $min_price . ' and ((price / currency.rate) * ' . $currency_rate . ') <= ' . $max_price);
@@ -278,5 +289,13 @@ class SearchController extends Controller
         curl_close($ch);
 
         return $result;
+    }
+
+
+    function multiexplode ($delimiters,$string) {
+
+        $ready = str_replace($delimiters, $delimiters[0], $string);
+        $launch = explode($delimiters[0], $ready);
+        return  $launch;
     }
 }
