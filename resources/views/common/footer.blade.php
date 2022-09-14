@@ -84,7 +84,15 @@
                             <a href="#" aria-label="modalCurrency" data-toggle="modal" data-target="#currencyModalCenter"> <span class="ml-4">{!! Session::get('symbol')  !!} - <u>{{ Session::get('currency')  }}</u> </span></a>
                         </div>
                     </div>
+
+                    <div class="col-md-12">
+                        <p class="text-center text-underline">
+                        <a  target="_blank" href="tel:0842502381" > <i class="fa fa-phone"></i> +1-6465832665 </a>
+                        </div>
+                    </div>
                 </div>
+
+               
         </div>
     </div>
 
@@ -122,6 +130,8 @@
 						@endforeach
 					</div>
 				</div>
+
+                
 			</div>
 		</div>
 	</div>
@@ -157,6 +167,8 @@
 
 					</div>
 				</div>
+
+                
 			</div>
         </div>
     </div>

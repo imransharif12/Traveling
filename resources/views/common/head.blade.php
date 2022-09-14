@@ -17,18 +17,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta property="og:url" content="https://www.searchastay.com/" />
-	<meta property="og:site_name" content="Search A Stay" />
-	<meta property="og:locale" content="en_US" />
-	<meta property="og:type" content="website" />
-	<meta property="og:title" content="Search A Stay" />
-	<meta property="og:description" content="Search your perfect stay with Searchastay.com" />
-	<meta property="og:image" content="https://searchastay.kigobook.com/wp-content/uploads/sites/821/2018/09/rev02-01.png" />
-	<meta property="og:image:secure_url" content="https://searchastay.kigobook.com/wp-content/uploads/sites/821/2018/09/rev02-01.png" />
-	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:title" content="Search A Stay" />
-	<meta name="twitter:description" content="Search your perfect stay with Searchastay.com" />
-	<meta name="twitter:image" content="https://searchastay.kigobook.com/wp-content/uploads/sites/821/2018/09/rev02-01-1024x637.png" />
+    <meta property="og:url" content="https://www.searchastay.com/" />
+    <meta property="og:site_name" content="Search A Stay" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Search A Stay" />
+    <meta property="og:description" content="Search your perfect stay with Searchastay.com" />
+    <meta property="og:image"
+        content="https://searchastay.kigobook.com/wp-content/uploads/sites/821/2018/09/rev02-01.png" />
+    <meta property="og:image:secure_url"
+        content="https://searchastay.kigobook.com/wp-content/uploads/sites/821/2018/09/rev02-01.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Search A Stay" />
+    <meta name="twitter:description" content="Search your perfect stay with Searchastay.com" />
+    <meta name="twitter:image"
+        content="https://searchastay.kigobook.com/wp-content/uploads/sites/821/2018/09/rev02-01-1024x637.png" />
 
     <script type="text/javascript">
         (window.NREUM || (NREUM = {})).init = {
@@ -86,7 +89,7 @@
                 }), s.dev && i.on("fn-err", function (t, e, n) {
                     r(n.stack)
                 }), s.dev && (r("NR AGENT IN DEVELOPMENT MODE"), r("flags: " + a(s, function (t,
-                e) {
+                    e) {
                     return t
                 }).join(", ")))
             }, {}],
@@ -204,9 +207,9 @@
                         ]), a(T, m + s), a(T, m + "-done"), a(P, "new-jsonp"), a(P, "jsonp-end"), a(P,
                             "cb-start"), E.on("pushState-end", i), E.on("replaceState-end", i), w[v](
                             "hashchange", i, N(!0)), w[v]("load", i, N(!0)), w[v]("popstate",
-                        function () {
-                            i(0, U > 1)
-                        }, N(!0))
+                            function () {
+                                i(0, U > 1)
+                            }, N(!0))
                 }
             }, {}],
             5: [function (t, e, n) {
@@ -224,11 +227,11 @@
 
                 function o(t) {
                     if (s(v, [window.performance.getEntriesByType(w)]), window.performance["c" + p])
-                    try {
-                        window.performance[h](m, o, !1)
-                    } catch (t) {} else try {
-                        window.performance[h]("webkit" + m, o, !1)
-                    } catch (t) {}
+                        try {
+                            window.performance[h](m, o, !1)
+                        } catch (t) {} else try {
+                            window.performance[h]("webkit" + m, o, !1)
+                        } catch (t) {}
                 }
 
                 function i(t) {}
@@ -380,7 +383,8 @@
                     .prototype,
                     a = window.history;
                 i && i.pushState && i.replaceState && (a = i), o.inPlace(a, ["pushState",
-                    "replaceState"], "-")
+                    "replaceState"
+                ], "-")
             }, {}],
             10: [function (t, e, n) {
                 function r(t) {
@@ -812,7 +816,8 @@
                             n.newrelicHeader && (e.setRequestHeader("newrelic", n
                                 .newrelicHeader), r = !0), n.traceContextParentHeader && (e
                                 .setRequestHeader("traceparent", n
-                                .traceContextParentHeader), n.traceContextStateHeader && e
+                                    .traceContextParentHeader), n.traceContextStateHeader &&
+                                e
                                 .setRequestHeader("tracestate", n.traceContextStateHeader),
                                 r = !0), r && (this.dt = n)
                         }
@@ -884,7 +889,7 @@
                         var o = f(this.parsedOrigin);
                         if (o && (o.newrelicHeader || o.traceContextParentHeader))
                             if ("string" == typeof t[0] || window.URL && t[0] && t[
-                                0] instanceof URL) {
+                                    0] instanceof URL) {
                                 var i = {};
                                 for (var a in r) i[a] = r[a];
                                 i.headers = new Headers(r.headers || {}), e(i.headers, o) && (
@@ -1026,7 +1031,7 @@
                         if ("undefined" != typeof ArrayBuffer && t instanceof ArrayBuffer && t
                             .byteLength) return t.byteLength;
                         if ("undefined" != typeof Blob && t instanceof Blob && t.size) return t
-                        .size;
+                            .size;
                         if (!("undefined" != typeof FormData && t instanceof FormData)) try {
                             return JSON.stringify(t).length
                         } catch (e) {
@@ -1103,7 +1108,8 @@
                     var n = t.getEntries();
                     n.forEach(function (t) {
                         "first-paint" === t.name ? l("timing", ["fp", Math.floor(t
-                            .startTime)]) : "first-contentful-paint" === t.name && l("timing", [
+                            .startTime)]) : "first-contentful-paint" === t.name && l(
+                            "timing", [
                                 "fcp", Math.floor(t.startTime)
                             ])
                     })
@@ -1284,7 +1290,7 @@
                 function r(t, e, n) {
                     e || (e = 0), "undefined" == typeof n && (n = t ? t.length : 0);
                     for (var r = -1, o = n - e || 0, i = Array(o < 0 ? 0 : o); ++r < o;) i[r] = t[e +
-                    r];
+                        r];
                     return i
                 }
                 e.exports = r
@@ -1585,6 +1591,22 @@
         }, {}, ["loader", 2, 17, 5, 3, 4]);
 
     </script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5b880345f31d0f771d844bbd/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+
+    </script>
+    <!--End of Tawk.to Script-->
     <title>Home</title>
     <meta name='robots' content='max-image-preview:large' />
     <meta name="dc.title" content="Search A Stay" />
