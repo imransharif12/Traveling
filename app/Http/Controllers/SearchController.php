@@ -140,6 +140,10 @@ class SearchController extends Controller
         $geocode = $this->content_read($map_where);
         $json = json_decode($geocode);
 
+        if ($json->{'results'}[0]->{'formatted_address'} != null) {
+            $full_address=$json->{'results'}[0]->{'formatted_address'};
+        }
+
         if ($map_details != '') {
             $map_data = explode('~', $map_details);
             $minLat = $map_data[2];
