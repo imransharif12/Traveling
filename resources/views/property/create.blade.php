@@ -86,9 +86,9 @@
 @stop
 @push('scripts')
 	<script type="text/javascript" src='https://maps.google.com/maps/api/js?key={{ @$map_key }}&libraries=places'></script>
-	<script type="text/javascript" src="{{ url('public/js/jquery.validate.min.js') }}"></script>
-	<script type="text/javascript" src="{{ url('public/js/locationpicker.jquery.min.js') }}"></script>
-	<script type="text/javascript" src="{{ url('public/js/propertycreate.js') }}"></script>
+	<script type="text/javascript" src="{{ url('js/jquery.validate.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url('js/locationpicker.jquery.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url('js/propertycreate.js') }}"></script>
 	<script  type="text/javascript">
 		$(document).ready(function () {
 			$('#list_space').validate({
