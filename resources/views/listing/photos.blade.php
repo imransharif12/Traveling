@@ -39,11 +39,11 @@
 
                                                             <div class="row">
                                                                 <div class="col-md-9">
-                                                                    <input class="form-control text-16" name="file" id="photo_file"
-                                                                           type="file" value="">
+                                                                    <input class="form-control text-16" name="file[]" id="photo_file"
+                                                                           type="file" value="" multiple="">
                                                                     <input type="hidden" id="photo" type="text" name="photos">
                                                                     <input type="hidden" name="img_name" id="img_name">
-                                                                    <input type="hidden" name="crop" id="type" value="crop">
+                                                                    <input type="hidden" name="crop" id="type" value="notcrop">
                                                                     <p class="text-13">(Width 640px and Height 360px)
                                                                     </p>
                                                                     <div id="result" class="hide">
@@ -53,11 +53,11 @@
                                                                 </div>
                                                                 <div class="col-md-3">
                                                                     <button type="submit"
-                                                                            class="btn btn-large btn-photo text-16" id="up_button">
+                                                                            class="btn btn-large btn-photo text-16" id="submit">
                                                                         <i class="spinner fa fa-spinner fa-spin d-none"
                                                                            id="up_spin"></i>
                                                                         <span
-                                                                            id="up_button_txt">{{ trans('messages.listing_description.upload') }}</span>
+                                                                            id="submit">{{ trans('messages.listing_description.upload') }}</span>
 
                                                                     </button>
                                                                 </div>
@@ -191,30 +191,7 @@
 			</div>
 		</div>
 
-        <div class="modal fade crop-modal" tabindex="-1" data-backdrop="static" data-keyboard="false" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" style="background: white">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2 class="modal-title" id="exampleModalLongTitle">{{ trans('messages.listing_description.edit_image') }}</h2>
-                        <button type="button" class="close text-28" id="clode-modal" aria-label="Close">
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div style="min-height: 70vh">
-                            <canvas id="canvas">
-                                {{trans('messages.listing_description.not_compatible')}}
-                            </canvas>
-                        </div>
-
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" id="crop" class="btn btn-primary">Crop</button>
-                        <button type="button" id="restore" class="btn btn-secondary" data-dismiss="modal">Skip</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+      
 	@stop
 
     @push('css')
@@ -258,7 +235,35 @@
         <script src="{{ url('js/cropper.min.js') }}"></script>
 		<script type="text/javascript" src="{{ url('js/jquery.validate.min.js') }}"></script>
 		<script src="{{ url('js/additional-method.min.js') }}"></script>
+        <script type="text/javascript">
+    var myInput = document.getElementById('photo_file');
+    myInput.onchange = _ => {
+        $(':button[type="submit"]').prop('disabled', false);
+    for (var i = 0; i < myInput.files.length; i++) {
+        var file = myInput.files[i];
+        const fileSize = file.size / 1024 / 1024;
+        const extFile = file.name.substring(file.name.length - 3);
+        if(myInput.files.length>24){
+            alert("Please upload Image one by one, max 20 images , jpeg, jpg only.");
+            $('#photo_file').val('');
+            return ;
+        }
+        if (extFile != "jpg" && extFile != "jpeg" && extFile != "png") {
+            alert("Please upload Image one by one, max 20 images , jpeg, jpg only.");
+            $('#photo_file').val('');
+            return ;
+        }
+        if (fileSize > 2) {
+            alert('File size exceeds 2 MB');
+            $('#photo_file').val('');
+            return ;
 
+        }
+    }
+};
+   
+
+</script>
 		<script type="text/javascript">
 			var gl_photo_id = 0;
 			$(document).on('submit', '#photo-form', function(e){

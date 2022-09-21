@@ -367,59 +367,7 @@
     });
 
 </script>
-<script>
-    $('#photo_file').on('change', function () {
-        //for crop remove below line
-        $('#type').val('simple_file');
-        // $("#crop-modal").modal();
-        var canvas = $("#canvas"),
-            context = canvas.get(0).getContext("2d"),
-            result = $('#result img');
-        let name = this.files[0].name;
-        if (this.files && this.files[0]) {
-            if (this.files[0].type.match(/^image\//)) {
-                var reader = new FileReader();
-                reader.onload = function (evt) {
-                    var img = new Image();
-                    img.onload = function () {
-                        context.canvas.height = img.height;
-                        context.canvas.width = img.width;
-                        context.drawImage(img, 0, 0);
-                        var cropper = canvas.cropper({});
-                        $('#crop').click(function () {
-                            // Get a string base 64 data url
-                            var croppedImageDataURL = canvas.cropper('getCroppedCanvas')
-                                .toDataURL("image/png");
-                            result.attr('src', croppedImageDataURL);
-                            $('#result').toggleClass('hide');
-                            $('#photo').val(croppedImageDataURL);
-                            $('#img_name').val(name);
-                            $('#type').val('crop');
-                            canvas.cropper('destroy');
-                            $("#crop-modal").modal('toggle');
-                            $("#submit").click();
 
-                        });
-
-                        $('#restore').click(function () {
-                            canvas.cropper('destroy');
-                            result.empty();
-                            $('#type').val('original');
-                            $("#submit").click();
-                        });
-                    };
-                    img.src = evt.target.result;
-                };
-                reader.readAsDataURL(this.files[0]);
-            } else {
-                alert("Invalid file type! Please select an image file.");
-            }
-        } else {
-            alert('No file(s) selected.');
-        }
-    });
-
-</script>
 @endpush
 @stop
 
@@ -429,6 +377,7 @@
 <script type="text/javascript">
     var myInput = document.getElementById('photo_file');
     myInput.onchange = _ => {
+        $(':button[type="submit"]').prop('disabled', false);
     for (var i = 0; i < myInput.files.length; i++) {
         var file = myInput.files[i];
         const fileSize = file.size / 1024 / 1024;
@@ -444,7 +393,7 @@
             return ;
         }
         if (fileSize > 2) {
-            alert('File size exceeds 2 MiB');
+            alert('File size exceeds 2 MB');
             $('#photo_file').val('');
             return ;
 
