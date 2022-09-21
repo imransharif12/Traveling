@@ -385,16 +385,22 @@
         if(myInput.files.length>24){
             alert("Please upload Image one by one, max 20 images , jpeg, jpg only.");
             $('#photo_file').val('');
+            $(':button[type="submit"]').prop('disabled', true);
+            $(':button[type="submit"]').css("color", "white");
             return ;
         }
         if (extFile != "jpg" && extFile != "jpeg" && extFile != "png") {
             alert("Please upload Image one by one, max 20 images , jpeg, jpg only.");
             $('#photo_file').val('');
+            $(':button[type="submit"]').prop('disabled', true);
+            $(':button[type="submit"]').css("color", "white");
             return ;
         }
         if (fileSize > 2) {
             alert('File size exceeds 2 MB');
             $('#photo_file').val('');
+            $(':button[type="submit"]').prop('disabled', true);
+            $(':button[type="submit"]').css("color", "white");
             return ;
 
         }
