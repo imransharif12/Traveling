@@ -139,18 +139,27 @@ class SearchController extends Controller
         $map_where = 'https://maps.google.com/maps/api/geocode/json?key=' . MAP_KEY . '&address=' . $address . '&sensor=false&libraries=places';
         $geocode = $this->content_read($map_where);
         $json = json_decode($geocode);
+        $short_address='';
+        $city='';
+        $places=$json->{'results'}[0];
+         for ($i = 0; $i < count($places->{'address_components'}); $i++) {
+        
+            for ($j = 0; $j < count($places->{'address_components'}[$i]->{'types'}); $j++) {
+                if ($places->{'address_components'}[$i]->{'types'}[$j] == "country") {
+                    $country=$places->{'address_components'}[$i]->{'short_name'};
+                  }
+                  if ($places->{'address_components'}[$i]->{'types'}[$j] == "route") {
+                    $short_address=$places->{'address_components'}[$i]->{'short_name'};
+                  }
 
-        if ($json->{'results'}[0]->{'address_components'}[0]->{'short_name'} != null) {
-            $short_address=$json->{'results'}[0]->{'address_components'}[0]->{'short_name'};
-        }
+                  if ($places->{'address_components'}[$i]->{'types'}[$j]== "locality") {
+                    $city=$places->{'address_components'}[$i]->{'short_name'};
+                  }
+                
+              }
+          }
 
-        if ($json->{'results'}[0]->{'address_components'}[1]->{'short_name'} != null) {
-            $city=$json->{'results'}[0]->{'address_components'}[1]->{'short_name'};
-        }
-
-        if ($json->{'results'}[0]->{'formatted_address'} != null) {
-            $full_address=$json->{'results'}[0]->{'formatted_address'};
-        }
+     
 
         if ($map_details != '') {
             $map_data = explode('~', $map_details);
@@ -224,15 +233,23 @@ class SearchController extends Controller
             ->firstWhere('code', \Session::get('currency'))
             ->rate;
 
-        $findaddress = $this->multiexplode(array(" ",",",".","|",":","-"),$full_address);
+
+
         $properties = Properties::with([
             'property_address',
             'property_price',
             'users'
         ])
-            ->whereHas('property_address', function ($query) use ($short_address,$city) {
-                      $query = $query->where('address_line_1', 'like', "%{$short_address}%")
-                                     ->orWhere('city', 'like', "%{$city}%");
+            ->whereHas('property_address', function ($query) use ($short_address,$city,$country) {
+                        $query->where('country','like', "%{$country}%" );
+
+                         if(!empty($short_address)){
+                            $query->orWhere('address_line_1', 'like', "%{$short_address}%");
+                         }
+
+                         if(!empty($city)){
+                            $query->orWhere('city', 'like', "%{$city}%");
+                         }
             })
             ->whereHas('property_price', function ($query) use ($min_price, $max_price, $currency_rate) {
                 $query->join('currency', 'currency.code', '=', 'property_price.currency_code');

@@ -80,11 +80,9 @@
                                 <div class="col-md-4 margin-top10" id="photo-div-{{$photo->id}}">
                                     <div class="room-image-container200"
                                         style="background-image:url({{url('images/property/'.$photo->property_id.'/'.$photo->photo)}})">
-                                        @if($photo->cover_photo == 0)
                                         <a class="photo-delete" href="javascript:void(0)" data-rel="{{$photo->id}}">
                                             <p class="photo-delete-icon"><i class="fa fa-trash-o"></i></p>
                                         </a>
-                                        @endif
                                     </div>
                                     <div class="margin-top5">
                                         <textarea data-rel="{{$photo->id}}" class="form-control photo-highlights"

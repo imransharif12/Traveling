@@ -91,7 +91,6 @@
                                                                          id="photo-div-{{ $photo->id }}">
                                                                         <div class="room-image-container200"
                                                                              style="background-image:url('{{ url('images/property/' . $photo->property_id . '/' . $photo->photo) }}');">
-                                                                            @if ($photo->cover_photo == 0)
                                                                                 <a class="photo-delete text-right"
                                                                                    href="javascript:void(0)"
                                                                                    data-rel="{{ $photo->id }}">
@@ -99,7 +98,6 @@
                                                                                             class="fa fa-trash text-danger p-4"></i>
                                                                                     </p>
                                                                                 </a>
-                                                                            @endif
                                                                         </div>
 
                                                                         <div class="row mt-5">
